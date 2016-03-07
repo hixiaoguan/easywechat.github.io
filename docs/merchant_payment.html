@@ -2,17 +2,17 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>账号接入 | Easy We Chat</title>
+  <title>企业支付 | Easy We Chat</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://easywechat.org/docs/zh-cn/accounts.html">
+  <link rel="canonical" href="http://easywechat.org/docs/zh-cn/merchant_payment.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="http://easywechat.org/docs/zh-cn/accounts.html">
+      <link rel="alternative" hreflang="zh-cn" href="http://easywechat.org/docs/zh-cn/merchant_payment.html">
     
-      <link rel="alternative" hreflang="en" href="http://easywechat.org/en/docs/zh-cn/accounts.html">
+      <link rel="alternative" hreflang="en" href="http://easywechat.org/en/docs/zh-cn/merchant_payment.html">
     
   
   <!-- Icon -->
@@ -37,79 +37,25 @@
   <!-- RSS -->
   <link rel="alternative" href="/atom.xml" title="Easy We Chat" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="如果你想使用本项目接入多个公众号，在本程序中，您可以为每个帐号都设置一个id，此id对应了该帐号的appid、token等信息。如下表
-
-
-
-id
-appId
-secret
-其它…
-
-
-
-
-1
-wx3cf0f39249eb0e60
-f28f735d4f1c242f4687abb469072a29
-…
-
-
-2
-wx49eb0e63cf0f39s2
-8f735d4687abb469f1c2422a29">
+  <meta name="description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 企业付款文档 。
+配置与其他支付接口一样，企业支付接口也需要配置如下参数，需要特别注意的是，企业支付相关的全部接口 都需要使用 SSL 证书，因此 cert_path 以及 cert_key 必须正确配置。
+&amp;lt;?phpuse EasyWeChat\Foundation\Application;$options = [    // payme">
 <meta property="og:type" content="website">
-<meta property="og:title" content="账号接入">
-<meta property="og:url" content="http://easywechat.org/docs/zh-cn/accounts.html">
+<meta property="og:title" content="企业支付">
+<meta property="og:url" content="http://easywechat.org/docs/zh-cn/merchant_payment.html">
 <meta property="og:site_name" content="Easy We Chat">
-<meta property="og:description" content="如果你想使用本项目接入多个公众号，在本程序中，您可以为每个帐号都设置一个id，此id对应了该帐号的appid、token等信息。如下表
-
-
-
-id
-appId
-secret
-其它…
-
-
-
-
-1
-wx3cf0f39249eb0e60
-f28f735d4f1c242f4687abb469072a29
-…
-
-
-2
-wx49eb0e63cf0f39s2
-8f735d4687abb469f1c2422a29">
+<meta property="og:description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 企业付款文档 。
+配置与其他支付接口一样，企业支付接口也需要配置如下参数，需要特别注意的是，企业支付相关的全部接口 都需要使用 SSL 证书，因此 cert_path 以及 cert_key 必须正确配置。
+&amp;lt;?phpuse EasyWeChat\Foundation\Application;$options = [    // payme">
 <meta property="og:updated_time" content="2016-03-07T10:27:38.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="账号接入">
-<meta name="twitter:description" content="如果你想使用本项目接入多个公众号，在本程序中，您可以为每个帐号都设置一个id，此id对应了该帐号的appid、token等信息。如下表
-
-
-
-id
-appId
-secret
-其它…
-
-
-
-
-1
-wx3cf0f39249eb0e60
-f28f735d4f1c242f4687abb469072a29
-…
-
-
-2
-wx49eb0e63cf0f39s2
-8f735d4687abb469f1c2422a29">
+<meta name="twitter:title" content="企业支付">
+<meta name="twitter:description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 企业付款文档 。
+配置与其他支付接口一样，企业支付接口也需要配置如下参数，需要特别注意的是，企业支付相关的全部接口 都需要使用 SSL 证书，因此 cert_path 以及 cert_key 必须正确配置。
+&amp;lt;?phpuse EasyWeChat\Foundation\Application;$options = [    // payme">
 <meta name="twitter:site" content="anzhengchao">
   <!-- Swiftype -->
-  <meta class="swiftype" name="title" data-type="string" content="账号接入">
+  <meta class="swiftype" name="title" data-type="string" content="企业支付">
   <!-- Google Analytics -->
   
 <script>
@@ -169,44 +115,20 @@ wx49eb0e63cf0f39s2
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">账号接入</h1>
-                <a href="https://github.com/EasyWeChat/docs/edit/zh-cn/accounts.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <h1 class="article-title" itemprop="name">企业支付</h1>
+                <a href="https://github.com/EasyWeChat/docs/edit/zh-cn/merchant_payment.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                <p>如果你想使用本项目接入多个公众号，在本程序中，您可以为每个帐号都设置一个id，此id对应了该帐号的appid、token等信息。<br>如下表</p>
-<table>
-<thead>
-<tr>
-<th>id</th>
-<th>appId</th>
-<th>secret</th>
-<th>其它…</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><code>wx3cf0f39249eb0e60</code></td>
-<td><code>f28f735d4f1c242f4687abb469072a29</code></td>
-<td>…</td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>wx49eb0e63cf0f39s2</code></td>
-<td><code>8f735d4687abb469f1c2422a29f4f207</code></td>
-<td>…</td>
-</tr>
-<tr>
-<td>N</td>
-<td><code>wx5cfeb0e60f392490</code></td>
-<td><code>35f8f27d46f1c242f487a9072a29bb46</code></td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-<p>在微信公众平台的设置中，您可以将您帐号中平台的 <code>url</code> 设置为 <code>您的网址/?id=xxx</code>，如:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://www.example.com/wechat?id=1</span><br></pre></td></tr></table></figure>
-<p>而在程序入口处，根据 <code>id</code> 查找对应帐号的 <code>appid</code> 和 其它信息， 传入 ‘Overtrue\Wechat\Server’，完成初始化。</p>
+                <p>你在阅读本文之前确认你已经仔细阅读了：<a href="https://pay.weixin.qq.com/wiki/doc/api/mch_pay.php?chapter=14_1" target="_blank" rel="external">微信支付 | 企业付款文档 </a>。</p>
+<h2 id="u914D_u7F6E" class="article-heading"><a href="#u914D_u7F6E" class="headerlink" title="配置"></a>配置<a class="article-anchor" href="#u914D_u7F6E" aria-hidden="true"></a></h2><p>与其他支付接口一样，企业支付接口也需要配置如下参数，需要特别注意的是，企业支付相关的全部接口 <strong>都需要使用 SSL 证书</strong>，因此 <strong>cert_path 以及 cert_key 必须正确配置</strong>。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">EasyWeChat</span>\<span class="title">Foundation</span>\<span class="title">Application</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$options</span> = [</span><br><span class="line">    <span class="comment">// payment</span></span><br><span class="line">    <span class="string">'payment'</span> =&gt; [</span><br><span class="line">        <span class="string">'merchant_id'</span>        =&gt; <span class="string">'your-mch-id'</span>,</span><br><span class="line">        <span class="string">'key'</span>                =&gt; <span class="string">'key-for-signature'</span>,</span><br><span class="line">        <span class="string">'cert_path'</span>          =&gt; <span class="string">'path/to/your/cert.pem'</span>,</span><br><span class="line">        <span class="string">'key_path'</span>           =&gt; <span class="string">'path/to/your/key'</span>,</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    ],</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="variable">$app</span> = <span class="keyword">new</span> Application(<span class="variable">$options</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$merchantPay</span> = <span class="variable">$app</span>-&gt;merchant_pay;</span><br></pre></td></tr></table></figure>
+<h2 id="u4F01_u4E1A_u4ED8_u6B3E" class="article-heading"><a href="#u4F01_u4E1A_u4ED8_u6B3E" class="headerlink" title="企业付款"></a>企业付款<a class="article-anchor" href="#u4F01_u4E1A_u4ED8_u6B3E" aria-hidden="true"></a></h2><p>企业付款使用的余额跟微信支付的收款并非同一账户，请注意充值。</p>
+<h3 id="u53D1_u9001_u63A5_u53E3" class="article-heading"><a href="#u53D1_u9001_u63A5_u53E3" class="headerlink" title="发送接口"></a>发送接口<a class="article-anchor" href="#u53D1_u9001_u63A5_u53E3" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$merchantPayData</span> = [</span><br><span class="line">        <span class="string">'partner_trade_no'</span> =&gt; str_random(<span class="number">16</span>), <span class="comment">//随机字符串作为订单号，跟红包和支付一个概念。</span></span><br><span class="line">        <span class="string">'openid'</span> =&gt; <span class="variable">$openid</span>, <span class="comment">//收款人的openid</span></span><br><span class="line">        <span class="string">'check_name'</span> =&gt; <span class="string">'NO_CHECK'</span>,  <span class="comment">//文档中三分钟校验实名的方法NO_CHECK OPTION_CHECK FORCE_CHECK</span></span><br><span class="line">        <span class="string">'re_user_name'</span>=&gt;<span class="string">'张三'</span>,     <span class="comment">//OPTION_CHECK FORCE_CHECK 校验实名的时候必须提交</span></span><br><span class="line">        <span class="string">'amount'</span> =&gt; <span class="number">100</span>,  <span class="comment">//单位为分</span></span><br><span class="line">        <span class="string">'desc'</span> =&gt; <span class="string">'企业付款'</span>,</span><br><span class="line">        <span class="string">'spbill_create_ip'</span> =&gt; <span class="string">'192.168.0.1'</span>,  <span class="comment">//发起交易的IP地址</span></span><br><span class="line">    ];</span><br><span class="line"><span class="variable">$result</span> = <span class="variable">$merchantPay</span>-&gt;send(<span class="variable">$merchantPayData</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>更多参数请参考官方文档中参数列表。</p>
+</blockquote>
+<h2 id="u67E5_u8BE2_u4ED8_u6B3E_u4FE1_u606F" class="article-heading"><a href="#u67E5_u8BE2_u4ED8_u6B3E_u4FE1_u606F" class="headerlink" title="查询付款信息"></a>查询付款信息<a class="article-anchor" href="#u67E5_u8BE2_u4ED8_u6B3E_u4FE1_u606F" aria-hidden="true"></a></h2><p>用于商户对已发放的企业支付进行查询企业支付的具体信息。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="variable">$partnerTradeNo</span> = <span class="string">"商户系统内部的订单号（partner_trade_no）"</span>;</span><br><span class="line"><span class="variable">$merchantPay</span>-&gt;query(<span class="variable">$partnerTradeNo</span>);</span><br></pre></td></tr></table></figure>
 
 
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
@@ -221,7 +143,7 @@ wx49eb0e63cf0f39s2
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u914D_u7F6E"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u4F01_u4E1A_u4ED8_u6B3E"><span class="toc-text">企业付款</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u53D1_u9001_u63A5_u53E3"><span class="toc-text">发送接口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u67E5_u8BE2_u4ED8_u6B3E_u4FE1_u606F"><span class="toc-text">查询付款信息</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
