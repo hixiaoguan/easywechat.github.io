@@ -47,7 +47,7 @@
 <meta property="og:description" content="我把微信的 API 里的所有“消息”都按类型抽象出来了，也就是说，你不用区分它是回复消息还是主动推送消息，免去了你去手动拼装微信那帮 SB 那么恶心的 XML 以及乱七八糟命名不统一的 JSON 了，我替你承受这份苦，不要问是谁，我是雷锋他弟弟，雷管。
 在阅读以下内容时请忽略是接收消息还是回复消息，后面我会给你讲它们的区别。
 消息类型消息分为以下几种：文本、图片、视频、声音、链接、坐标、图文、文章">
-<meta property="og:updated_time" content="2016-03-18T03:43:28.446Z">
+<meta property="og:updated_time" content="2016-03-19T06:17:01.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="消息">
 <meta name="twitter:description" content="我把微信的 API 里的所有“消息”都按类型抽象出来了，也就是说，你不用区分它是回复消息还是主动推送消息，免去了你去手动拼装微信那帮 SB 那么恶心的 XML 以及乱七八糟命名不统一的 JSON 了，我替你承受这份苦，不要问是谁，我是雷锋他弟弟，雷管。
@@ -129,6 +129,18 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">消息</h1>
                 <a href="https://github.com/EasyWeChat/docs/edit/zh-cn/messages.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
+              <!-- AD -->
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- easywechat-top -->
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-2163469583563094"
+                   data-ad-slot="3400967944"
+                   data-ad-format="auto"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+              <!-- /AD -->
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
                 <p>我把微信的 API 里的所有“消息”都按类型抽象出来了，也就是说，你不用区分它是回复消息还是主动推送消息，免去了你去手动拼装微信那帮 SB 那么恶心的 XML 以及乱七八糟命名不统一的 JSON 了，我替你承受这份苦，不要问是谁，我是雷锋他弟弟，雷管。</p>
 <p>在阅读以下内容时请忽略是<strong>接收消息</strong>还是<strong>回复消息</strong>，后面我会给你讲它们的区别。</p>
@@ -196,7 +208,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-03-18T03:43:28.446Z" itemprop="dateModified">上次更新：2016-03-18</time>
+                <time class="article-footer-updated" datetime="2016-03-19T06:17:01.842Z" itemprop="dateModified">上次更新：2016-03-19</time>
                 <a href="server.html" class="article-footer-prev" title="服务端"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="events.html" class="article-footer-next" title="事件"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -208,6 +220,18 @@ var _hmt = _hmt || [];
               <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u6D88_u606F_u7C7B_u578B"><span class="toc-text">消息类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u6587_u672C_u6D88_u606F"><span class="toc-text">文本消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u56FE_u7247_u6D88_u606F"><span class="toc-text">图片消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u89C6_u9891_u6D88_u606F"><span class="toc-text">视频消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u58F0_u97F3_u6D88_u606F"><span class="toc-text">声音消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u94FE_u63A5_u6D88_u606F"><span class="toc-text">链接消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5750_u6807_u6D88_u606F"><span class="toc-text">坐标消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u56FE_u6587_u6D88_u606F"><span class="toc-text">图文消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6587_u7AE0_u6D88_u606F"><span class="toc-text">文章消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7D20_u6750_u6D88_u606F"><span class="toc-text">素材消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u539F_u59CB_u6D88_u606F"><span class="toc-text">原始消息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5728_SDK__u4E2D_u4F7F_u7528_u6D88_u606F"><span class="toc-text">在 SDK 中使用消息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u5728_u670D_u52A1_u7AEF_u56DE_u590D_u6D88_u606F"><span class="toc-text">在服务端回复消息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u56DE_u590D_u591A_u56FE_u6587_u6D88_u606F"><span class="toc-text">回复多图文消息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F5C_u4E3A_u5BA2_u670D_u6D88_u606F_u53D1_u9001"><span class="toc-text">作为客服消息发送</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u53D1_u9001_u591A_u56FE_u6587_u6D88_u606F"><span class="toc-text">发送多图文消息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7FA4_u53D1_u6D88_u606F"><span class="toc-text">群发消息</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
+            <!-- AD -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- easywechat-sidebar -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2163469583563094"
+                 data-ad-slot="6354434345"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- /AD -->
           </aside>
         </div>
       </article>
