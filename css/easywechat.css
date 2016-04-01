@@ -1499,6 +1499,13 @@ a.article-title:hover {
 .footer-link:first-child {
   margin-left: 0;
 }
+.friend-links {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.friend-links a {
+  margin-right: 10px;
+}
 pre,
 code {
   font-family: Monaco, "Source Code Pro", Menlo, Consolas, monospace;
