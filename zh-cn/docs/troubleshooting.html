@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="/build/css/easywechat-29873a18a0.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <!-- RSS -->
-  <link rel="alternative" href="/atom.xml" title="Easy We Chat" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Easy We Chat">
   <!-- Open Graph -->
   <meta name="description" content="在微信公众平台开发的道路上，遍布着各种大大小小的坑，有的人掉坑里，几经折腾又爬出来了，然后拍拍屁股走人。然而坑还在那里，还会继续有后来人掉进去……
 这，是我们不愿看到的。
@@ -50,12 +50,13 @@
 这，是我们不愿看到的。
 所以在这里，我们将陆续将微信开发中可能遇到的各种疑难问题进行汇总，并给出对应的解决办法。一般情况下，这些问题都可以对号入座，轻松地解决。但也不排除特殊情况，这时候你遇到的问题与文中某一个症状一致，但文中所给的解决方案并不凑效，这">
 <meta property="og:image" content="http://easywechat.org/images/emoji/smile.png">
-<meta property="og:updated_time" content="2016-05-09T10:05:36.303Z">
+<meta property="og:updated_time" content="2016-05-10T05:50:08.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="疑难解答">
 <meta name="twitter:description" content="在微信公众平台开发的道路上，遍布着各种大大小小的坑，有的人掉坑里，几经折腾又爬出来了，然后拍拍屁股走人。然而坑还在那里，还会继续有后来人掉进去……
 这，是我们不愿看到的。
 所以在这里，我们将陆续将微信开发中可能遇到的各种疑难问题进行汇总，并给出对应的解决办法。一般情况下，这些问题都可以对号入座，轻松地解决。但也不排除特殊情况，这时候你遇到的问题与文中某一个症状一致，但文中所给的解决方案并不凑效，这">
+<meta name="twitter:image" content="http://easywechat.org/images/emoji/smile.png">
 <meta name="twitter:site" content="anzhengchao">
   <!-- Swiftype -->
   <meta class="swiftype" name="title" data-type="string" content="疑难解答">
@@ -184,9 +185,9 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <h2 id="cURL_error_56_3A_SSLRead_28_29_return_error_-9806" class="article-heading"><a href="#cURL_error_56_3A_SSLRead_28_29_return_error_-9806" class="headerlink" title="cURL error 56: SSLRead() return error -9806"></a>cURL error 56: SSLRead() return error -9806<a class="article-anchor" href="#cURL_error_56_3A_SSLRead_28_29_return_error_-9806" aria-hidden="true"></a></h2><p>目前在 OSX 下，发现使用 HomeBrew 装的 PHP 7.0 有这个问题，解决方案是重新 brew 安装 PHP：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">$ brew install homebrew/php/php70 --with-homebrew-openssl --with-homebrew-curl --without-snmp -vvv</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ brew install homebrew/php/php70 --with-homebrew-openssl --with-homebrew-curl --without-snmp -vvv</span><br></pre></td></tr></table></figure>
 <p>验证：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">$ php -i | grep &#39;OpenSSL support&#39;&#10;&#10;OpenSSL support =&#62; enabled&#10;OpenSSL support =&#62; enabled</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ php -i | grep &apos;OpenSSL support&apos;</span><br><span class="line"></span><br><span class="line">OpenSSL support =&gt; enabled</span><br><span class="line">OpenSSL support =&gt; enabled</span><br></pre></td></tr></table></figure>
 <h2 id="u652F_u4ED8_u5931_u8D25_uFF01_u5F53_u524D_u9875_u9762_u7684_URL__u672A_u6CE8_u518C" class="article-heading"><a href="#u652F_u4ED8_u5931_u8D25_uFF01_u5F53_u524D_u9875_u9762_u7684_URL__u672A_u6CE8_u518C" class="headerlink" title="支付失败！当前页面的 URL 未注册"></a>支付失败！当前页面的 URL 未注册<a class="article-anchor" href="#u652F_u4ED8_u5931_u8D25_uFF01_u5F53_u524D_u9875_u9762_u7684_URL__u672A_u6CE8_u518C" aria-hidden="true"></a></h2><p>这是由于微信支付授权目录未正确配置引起的。此时开发者应该登录微信公众平台，进入<strong>【微信支付】-&gt;【开发设置】</strong>进行设置。</p>
 <ol>
 <li><p>公众号可添加3个支付授权目录，满足不同应用使用同一个公众号进行支付的业务需求。</p>
@@ -246,7 +247,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-05-09T10:05:36.303Z" itemprop="dateModified">上次更新：2016-05-09</time>
+                <time class="article-footer-updated" datetime="2016-05-10T05:50:08.365Z" itemprop="dateModified">上次更新：2016-05-10</time>
                 <a href="cache.html" class="article-footer-prev" title="缓存"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="contributing.html" class="article-footer-next" title="贡献"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -336,7 +337,7 @@ var _hmt = _hmt || [];
 <script src="/build/js/main-f3ea4c4cec.js"></script>
 <script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
 
-<script src="/js/tab.js" type="text/javascript"></script>
+<script src="/js/tab.js"></script>
 <!-- Swiftype -->
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
