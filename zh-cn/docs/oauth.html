@@ -51,7 +51,7 @@
 +--------+                               +---------------+|        |--(A)- Authorization Request -&amp;gt;|   Resource    ||        |">
 <meta property="og:image" content="http://easywechat.org/images/emoji/smile.png">
 <meta property="og:image" content="http://easywechat.org/images/emoji/pray.png">
-<meta property="og:updated_time" content="2016-06-17T03:53:32.220Z">
+<meta property="og:updated_time" content="2016-06-20T03:05:51.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网页授权">
 <meta name="twitter:description" content="关于 OAuth2.0OAuth是一个关于授权（authorization）的开放网络标准，在全世界得到广泛应用，目前的版本是2.0版。
@@ -221,7 +221,7 @@ var _hmt = _hmt || [];
 <p>你可以选择在框架中做一些正确的响应，比如在 <a href="http://laravel.com" target="_blank" rel="external">Laravel</a> 框架中控制器方法是要求返回响应值的，那么你就直接:</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> $response;</span><br></pre></td></tr></table></figure>
 <p>在有的框架中是直接 <code>echo</code> 或者 <code>$this-&gt;display()</code> 这种的时候，你就直接：</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">echo</span> $response; <span class="comment">// 或者  $response-&gt;send(); exit();</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$response-&gt;send(); <span class="comment">// Laravel 里请使用：return $response;</span></span><br></pre></td></tr></table></figure>
 <h3 id="获取已授权用户" class="article-heading"><a href="#获取已授权用户" class="headerlink" title="获取已授权用户"></a>获取已授权用户<a class="article-anchor" href="#获取已授权用户" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$user = $app-&gt;oauth-&gt;user();</span><br><span class="line"><span class="comment">// $user 可以用的方法:</span></span><br><span class="line"><span class="comment">// $user-&gt;getId();  // 对应微信的 OPENID</span></span><br><span class="line"><span class="comment">// $user-&gt;getNickname(); // 对应微信的 nickname</span></span><br><span class="line"><span class="comment">// $user-&gt;getName(); // 对应微信的 nickname</span></span><br><span class="line"><span class="comment">// $user-&gt;getAvatar(); // 头像网址</span></span><br><span class="line"><span class="comment">// $user-&gt;getOriginal(); // 原始API返回的结果</span></span><br><span class="line"><span class="comment">// $user-&gt;getToken(); // access_token， 比如用于地址共享时使用</span></span><br></pre></td></tr></table></figure>
 <p>返回的 <code>$user</code> 是 <a href="https://github.com/overtrue/socialite/blob/master/src/User.php" target="_blank" rel="external">Overtrue\Socialite\User</a> 对象，你可以从该对象拿到<a href="https://github.com/overtrue/socialite#user-interface" target="_blank" rel="external">更多的信息</a>。</p>
 <blockquote>
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-06-17T03:53:32.220Z" itemprop="dateModified">上次更新：2016-06-17</time>
+                <time class="article-footer-updated" datetime="2016-06-20T03:05:51.576Z" itemprop="dateModified">上次更新：2016-06-20</time>
                 <a href="user-group.html" class="article-footer-prev" title="用户组"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="material.html" class="article-footer-next" title="素材管理"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

@@ -51,7 +51,7 @@
 <meta property="og:description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 商户平台开发文档。
 配置配置在前面的例子中已经提到过了，支付的相关配置如下：
 &amp;lt;?phpuse EasyWeChat\Foundation\Application;$options = [    // 前面的appid什么的也得保留哦    &apos;app_id&apos; =&amp;gt; &apos;xxxx&apos;,    // ...    // payment">
-<meta property="og:updated_time" content="2016-06-17T03:53:32.220Z">
+<meta property="og:updated_time" content="2016-06-20T03:05:51.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支付">
 <meta name="twitter:description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 商户平台开发文档。
@@ -181,7 +181,7 @@ var _hmt = _hmt || [];
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$result = $payment-&gt;prepare($order);</span><br><span class="line"><span class="keyword">if</span> ($result-&gt;return_code == <span class="string">'SUCCESS'</span> &amp;&amp; $result-&gt;result_code == <span class="string">'SUCCESS'</span>)&#123;</span><br><span class="line">    $prepayId = $result-&gt;prepay_id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="支付结果通知" class="article-heading"><a href="#支付结果通知" class="headerlink" title="支付结果通知"></a>支付结果通知<a class="article-anchor" href="#支付结果通知" aria-hidden="true"></a></h2><p>在用户成功支付后，微信服务器会向该 <strong>订单中设置的回调URL</strong> 发起一个 POST 请求，请求的内容为一个 XML。里面包含了所有的详细信息，具体请参考：<br><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_7" target="_blank" rel="external">支付结果通用通知</a></p>
 <p>在本 SDK 中处理回调真的再简单不过了，请求验证你就不用管了，SDK 已经为你做好了，你只需要关注业务即可：</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$response = $app-&gt;payment-&gt;handleNotify(<span class="function"><span class="keyword">function</span><span class="params">($notify, $successful)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 你的逻辑</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">// 或者错误消息</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> $response;<span class="comment">// 或者 $response-&gt;send()</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$response = $app-&gt;payment-&gt;handleNotify(<span class="function"><span class="keyword">function</span><span class="params">($notify, $successful)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 你的逻辑</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">// 或者错误消息</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$response-&gt;send(); <span class="comment">// Laravel 里请使用：return $response;</span></span><br></pre></td></tr></table></figure>
 <p>这里需要注意的有几个点：</p>
 <ol>
 <li><code>handleNotify</code> 只接收一个 <a href="http://php.net/manual/zh/language.types.callable.php" target="_blank" rel="external"><code>callable</code></a> 参数，通常用一个匿名函数即可。</li>
@@ -276,7 +276,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-06-17T03:53:32.220Z" itemprop="dateModified">上次更新：2016-06-17</time>
+                <time class="article-footer-updated" datetime="2016-06-20T03:05:51.576Z" itemprop="dateModified">上次更新：2016-06-20</time>
                 <a href="js.html" class="article-footer-prev" title="JSSDK"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="merchant_payment.html" class="article-footer-next" title="企业支付"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
