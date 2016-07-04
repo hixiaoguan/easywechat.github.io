@@ -54,7 +54,7 @@
 1. 所有服务号都可以在功能-&amp;gt;添加功能插件处看到申请模板消息功能的入口，但只有认证后的服务号才可以申请模板消息的使用权限并获得该权限；
 2. 需要选择公众账号服务所处的2个行业，每月可更改1">
 <meta property="og:image" content="http://7u2jwa.com1.z0.glb.clouddn.com/QQ20160111-0@2x.png">
-<meta property="og:updated_time" content="2016-06-30T10:05:00.793Z">
+<meta property="og:updated_time" content="2016-07-04T13:14:48.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模板消息">
 <meta name="twitter:description" content="模板消息仅用于公众号向用户发送重要的服务通知，只能用于符合其要求的服务场景中，如信用卡刷卡通知，商品购买成功通知等。不支持广告等营销类消息以及其它所有可能对用户造成骚扰的消息。
@@ -188,7 +188,9 @@ var _hmt = _hmt || [];
 <li><code>boolean setIndustry($industryId1, $industryId2)</code> 修改账号所属行业；</li>
 <li><code>array getIndustry()</code> 返回所有支持的行业列表，用于做下拉选择行业可视化更新；</li>
 <li><code>string  addTemplate($shortId)</code> 添加模板并获取模板ID；</li>
-<li><code>int send($message)</code> 发送模板消息, 返回消息ID。</li>
+<li><code>int send($message)</code> 发送模板消息, 返回消息ID；</li>
+<li><code>array  getPrivateTemplates()</code> 获取所有模板列表；</li>
+<li><code>array  deletePrivateTemplate($templateId)</code> 删除指定ID的模板。</li>
 </ul>
 <p>非链接调用方法：</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$messageId = $notice-&gt;send([</span><br><span class="line">        <span class="string">'touser'</span> =&gt; <span class="string">'user-openid'</span>,</span><br><span class="line">        <span class="string">'template_id'</span> =&gt; <span class="string">'template-id'</span>,</span><br><span class="line">        <span class="string">'url'</span> =&gt; <span class="string">'xxxxx'</span>,</span><br><span class="line">        <span class="string">'topcolor'</span> =&gt; <span class="string">'#f7f7f7'</span>,</span><br><span class="line">        <span class="string">'data'</span> =&gt; [</span><br><span class="line">            <span class="comment">//...</span></span><br><span class="line">        ],</span><br><span class="line">    ]);</span><br></pre></td></tr></table></figure>
@@ -229,7 +231,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-06-30T10:05:00.793Z" itemprop="dateModified">上次更新：2016-06-30</time>
+                <time class="article-footer-updated" datetime="2016-07-04T13:14:48.985Z" itemprop="dateModified">上次更新：2016-07-04</time>
                 <a href="broadcast.html" class="article-footer-prev" title="群发消息"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="user.html" class="article-footer-next" title="用户"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
