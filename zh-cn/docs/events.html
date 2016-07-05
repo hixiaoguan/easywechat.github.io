@@ -10,9 +10,9 @@
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="">
+      <link rel="alternative" hreflang="zh-cn" href="http://easywechat.org/docs/events.html">
     
-      <link rel="alternative" hreflang="en" href="">
+      <link rel="alternative" hreflang="en" href="http://easywechat.org/en/docs/events.html">
     
   
   <!-- Icon -->
@@ -51,7 +51,7 @@
 <meta property="og:description" content="注意：3.0 起，所有服务端的入口（消息与事件）都已经合并为一个方法来处理：setMessageHandler()
 
 在服务端接收用户端产生的事件&amp;lt;?phpuse EasyWeChat\Foundation\Application;// ...$app = new Application($options);$server = $app-&amp;gt;server;$server-&amp;gt;set">
-<meta property="og:updated_time" content="2016-07-05T13:12:21.317Z">
+<meta property="og:updated_time" content="2016-07-05T13:17:07.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件">
 <meta name="twitter:description" content="注意：3.0 起，所有服务端的入口（消息与事件）都已经合并为一个方法来处理：setMessageHandler()
@@ -111,23 +111,23 @@ var _hmt = _hmt || [];
     <header id="header" class="wrapper">
   <div id="header-inner" class="inner">
     <h1 id="logo-wrap">
-      <a href="" id="logo">EasyWeChat</a>
+      <a href="/" id="logo">EasyWeChat</a>
     </h1>
     <nav id="main-nav">
       <ul>
-        
+        <li class="main-nav-item"><a href="/" class="main-nav-link">首页</a></li><li class="main-nav-item"><a href="/zh-cn/docs/" class="main-nav-link">文档</a></li><li class="main-nav-item"><a href="https://forum.easywechat.org" class="main-nav-link">论坛</a></li><li class="main-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="main-nav-link">视频</a></li><li class="main-nav-item"><a href="/news/" class="main-nav-link">动态</a></li><li class="main-nav-item"><a href="/donate.html" class="main-nav-link">打赏</a></li>
         <li class="main-nav-item">
           <a href="https://github.com/overtrue/wechat" class="main-nav-link">GitHub</a>
         </li>
       </ul>
     </nav>
     <div id="lang-select-wrap">
-      <label id="lang-select-label"><i class="fa fa-globe"></i><span></span></label>
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
       <select id="lang-select">
         
-          <option data-page-lang="zh-cn" value="zh-cn" selected></option>
+          <option data-page-lang="zh-cn" value="zh-cn" selected>简体中文</option>
         
-          <option data-page-lang="zh-cn" value="en"></option>
+          <option data-page-lang="zh-cn" value="en">English</option>
         
       </select>
     </div>
@@ -152,7 +152,7 @@ var _hmt = _hmt || [];
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">事件</h1>
-                <a href="" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="https://github.com/EasyWeChat/docs/edit/zh-cn/events.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <!-- AD -->
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -167,13 +167,22 @@ var _hmt = _hmt || [];
               </script>
               <!-- /AD -->
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                
+                <blockquote>
+<p>注意：3.0 起，所有服务端的入口（<strong>消息与事件</strong>）都已经合并为一个方法来处理：<code>setMessageHandler()</code></p>
+</blockquote>
+<h3 id="在服务端接收用户端产生的事件" class="article-heading"><a href="#在服务端接收用户端产生的事件" class="headerlink" title="在服务端接收用户端产生的事件"></a>在服务端接收用户端产生的事件<a class="article-anchor" href="#在服务端接收用户端产生的事件" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">use</span> <span class="title">EasyWeChat</span>\<span class="title">Foundation</span>\<span class="title">Application</span>;</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div><div class="line"></div><div class="line">$app = <span class="keyword">new</span> Application($options);</div><div class="line"></div><div class="line">$server = $app-&gt;server;</div><div class="line"></div><div class="line">$server-&gt;setMessageHandler(<span class="function"><span class="keyword">function</span><span class="params">($message)</span></span>&#123;</div><div class="line">    <span class="comment">// 注意，这里的 $message 不仅仅是用户发来的消息，也可能是事件</span></div><div class="line">    <span class="comment">// 当 $message-&gt;MsgType 为 event 时为事件</span></div><div class="line">    <span class="keyword">if</span> ($message-&gt;MsgType == <span class="string">'event'</span>) &#123;</div><div class="line">        <span class="comment"># code...</span></div><div class="line">        <span class="keyword">switch</span> ($message-&gt;Event) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="string">'subscribe'</span>:</div><div class="line">                <span class="comment"># code...</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="comment"># code...</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">$response = $server-&gt;serve();</div><div class="line"></div><div class="line">$response-&gt;send(); <span class="comment">// Laravel 里请使用：return $response;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：<code>$response</code> 是一个对象，不要直接 echo.</p>
+</blockquote>
+<p>更多请参考：<a href="docs/server.html">服务端</a></p>
+<p>关于事件类型请参考微信官方文档：<a href="http://mp.weixin.qq.com/wiki/2/5baf56ce4947d35003b86a9805634b1e.html" target="_blank" rel="external">http://mp.weixin.qq.com/wiki/2/5baf56ce4947d35003b86a9805634b1e.html</a></p>
+
 
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-07-05T13:12:21.317Z" itemprop="dateModified">上次更新：2016-07-05</time>
-                
+                <time class="article-footer-updated" datetime="2016-07-05T13:17:07.872Z" itemprop="dateModified">上次更新：2016-07-05</time>
+                <a href="message-transfer.html" class="article-footer-prev" title="多客服消息转发"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="broadcast.html" class="article-footer-next" title="群发消息"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
             </div>
@@ -200,7 +209,7 @@ var _hmt = _hmt || [];
         </div>
       </article>
       <aside id="sidebar" role="navigation">
-  <div class="inner"></div>
+  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><a href="installation.html" class="sidebar-link">安装</a><a href="tutorial.html" class="sidebar-link">小教程</a><a href="configuration.html" class="sidebar-link">配置</a><a href="integration.html" class="sidebar-link">在框架中使用</a><a href="troubleshooting.html" class="sidebar-link">常见问题汇总</a><strong class="sidebar-title">基本使用</strong><a href="server.html" class="sidebar-link">服务端</a><a href="messages.html" class="sidebar-link">消息</a><a href="message-transfer.html" class="sidebar-link">多客服消息转发</a><a href="events.html" class="sidebar-link current">事件</a><a href="broadcast.html" class="sidebar-link">群发消息</a><a href="notice.html" class="sidebar-link">模板消息</a><a href="user.html" class="sidebar-link">用户</a><a href="user-tag.html" class="sidebar-link">用户标签</a><a href="user-group.html" class="sidebar-link">用户组</a><a href="oauth.html" class="sidebar-link">网页授权</a><a href="material.html" class="sidebar-link">素材管理</a><a href="menu.html" class="sidebar-link">菜单</a><a href="js.html" class="sidebar-link">JSSDK</a><a href="payment.html" class="sidebar-link">支付</a><a href="merchant_payment.html" class="sidebar-link">企业支付</a><a href="lucky-money.html" class="sidebar-link">红包</a><a href="card.html" class="sidebar-link">卡券</a><a href="store.html" class="sidebar-link">小店</a><a href="poi.html" class="sidebar-link">门店</a><a href="staff.html" class="sidebar-link">客服</a><a href="anaylsis.html" class="sidebar-link">数据统计与分析</a><a href="qrcode.html" class="sidebar-link">二维码</a><a href="short-url.html" class="sidebar-link">短网址</a><a href="semantic.html" class="sidebar-link">语义理解</a><a href="reply.html" class="sidebar-link">自动回复</a><strong class="sidebar-title">自定义</strong><a href="access_token.html" class="sidebar-link">Access Token</a><a href="cache.html" class="sidebar-link">缓存</a><strong class="sidebar-title">其他</strong><a href="troubleshooting.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a><a href="roadmap.html" class="sidebar-link">路线图</a></div>
 </aside>
     </div>
   </div>
@@ -238,22 +247,22 @@ var _hmt = _hmt || [];
   <nav id="mobile-nav">
   <div id="mobile-nav-inner">
     <ul id="mobile-nav-list">
-      
+      <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">首页</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/" class="mobile-nav-link">文档</a></li><li class="mobile-nav-item"><a href="https://forum.easywechat.org" class="mobile-nav-link">论坛</a></li><li class="mobile-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="mobile-nav-link">视频</a></li><li class="mobile-nav-item"><a href="/news/" class="mobile-nav-link">动态</a></li><li class="mobile-nav-item"><a href="/donate.html" class="mobile-nav-link">打赏</a></li>
       <li class="mobile-nav-item">
         <a href="https://github.com/overtrue/wechat" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
       </li>
     </ul>
     
-      
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="installation.html" class="mobile-nav-link">安装</a><a href="tutorial.html" class="mobile-nav-link">小教程</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="integration.html" class="mobile-nav-link">在框架中使用</a><a href="troubleshooting.html" class="mobile-nav-link">常见问题汇总</a><strong class="mobile-nav-title">基本使用</strong><a href="server.html" class="mobile-nav-link">服务端</a><a href="messages.html" class="mobile-nav-link">消息</a><a href="message-transfer.html" class="mobile-nav-link">多客服消息转发</a><a href="events.html" class="mobile-nav-link current">事件</a><a href="broadcast.html" class="mobile-nav-link">群发消息</a><a href="notice.html" class="mobile-nav-link">模板消息</a><a href="user.html" class="mobile-nav-link">用户</a><a href="user-tag.html" class="mobile-nav-link">用户标签</a><a href="user-group.html" class="mobile-nav-link">用户组</a><a href="oauth.html" class="mobile-nav-link">网页授权</a><a href="material.html" class="mobile-nav-link">素材管理</a><a href="menu.html" class="mobile-nav-link">菜单</a><a href="js.html" class="mobile-nav-link">JSSDK</a><a href="payment.html" class="mobile-nav-link">支付</a><a href="merchant_payment.html" class="mobile-nav-link">企业支付</a><a href="lucky-money.html" class="mobile-nav-link">红包</a><a href="card.html" class="mobile-nav-link">卡券</a><a href="store.html" class="mobile-nav-link">小店</a><a href="poi.html" class="mobile-nav-link">门店</a><a href="staff.html" class="mobile-nav-link">客服</a><a href="anaylsis.html" class="mobile-nav-link">数据统计与分析</a><a href="qrcode.html" class="mobile-nav-link">二维码</a><a href="short-url.html" class="mobile-nav-link">短网址</a><a href="semantic.html" class="mobile-nav-link">语义理解</a><a href="reply.html" class="mobile-nav-link">自动回复</a><strong class="mobile-nav-title">自定义</strong><a href="access_token.html" class="mobile-nav-link">Access Token</a><a href="cache.html" class="mobile-nav-link">缓存</a><strong class="mobile-nav-title">其他</strong><a href="troubleshooting.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a><a href="roadmap.html" class="mobile-nav-link">路线图</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
-    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span></span></span>
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
     <select id="mobile-lang-select">
       
-        <option value="zh-cn" selected></option>
+        <option value="zh-cn" selected>简体中文</option>
       
-        <option value="en"></option>
+        <option value="en">English</option>
       
     </select>
   </div>

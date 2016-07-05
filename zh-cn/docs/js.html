@@ -10,9 +10,9 @@
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="">
+      <link rel="alternative" hreflang="zh-cn" href="http://easywechat.org/docs/js.html">
     
-      <link rel="alternative" hreflang="en" href="">
+      <link rel="alternative" hreflang="en" href="http://easywechat.org/en/docs/js.html">
     
   
   <!-- Icon -->
@@ -51,7 +51,7 @@ $js-&amp;gt;config(array $APIs, $debug = false, $beta = false, $json = true); �
 <meta property="og:description" content="获取实例&amp;lt;?phpuse EasyWeChat\Foundation\Application;//...$app = new Application($options);$js = $app-&amp;gt;js;
 API
 $js-&amp;gt;config(array $APIs, $debug = false, $beta = false, $json = true); 获取JSSDK的配置数组，默认">
-<meta property="og:updated_time" content="2016-07-05T13:12:21.317Z">
+<meta property="og:updated_time" content="2016-07-05T13:17:07.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSSDK">
 <meta name="twitter:description" content="获取实例&amp;lt;?phpuse EasyWeChat\Foundation\Application;//...$app = new Application($options);$js = $app-&amp;gt;js;
@@ -111,23 +111,23 @@ var _hmt = _hmt || [];
     <header id="header" class="wrapper">
   <div id="header-inner" class="inner">
     <h1 id="logo-wrap">
-      <a href="" id="logo">EasyWeChat</a>
+      <a href="/" id="logo">EasyWeChat</a>
     </h1>
     <nav id="main-nav">
       <ul>
-        
+        <li class="main-nav-item"><a href="/" class="main-nav-link">首页</a></li><li class="main-nav-item"><a href="/zh-cn/docs/" class="main-nav-link">文档</a></li><li class="main-nav-item"><a href="https://forum.easywechat.org" class="main-nav-link">论坛</a></li><li class="main-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="main-nav-link">视频</a></li><li class="main-nav-item"><a href="/news/" class="main-nav-link">动态</a></li><li class="main-nav-item"><a href="/donate.html" class="main-nav-link">打赏</a></li>
         <li class="main-nav-item">
           <a href="https://github.com/overtrue/wechat" class="main-nav-link">GitHub</a>
         </li>
       </ul>
     </nav>
     <div id="lang-select-wrap">
-      <label id="lang-select-label"><i class="fa fa-globe"></i><span></span></label>
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
       <select id="lang-select">
         
-          <option data-page-lang="zh-cn" value="zh-cn" selected></option>
+          <option data-page-lang="zh-cn" value="zh-cn" selected>简体中文</option>
         
-          <option data-page-lang="zh-cn" value="en"></option>
+          <option data-page-lang="zh-cn" value="en">English</option>
         
       </select>
     </div>
@@ -152,7 +152,7 @@ var _hmt = _hmt || [];
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">JSSDK</h1>
-                <a href="" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="https://github.com/EasyWeChat/docs/edit/zh-cn/js.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <!-- AD -->
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -167,13 +167,24 @@ var _hmt = _hmt || [];
               </script>
               <!-- /AD -->
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                
+                <h2 id="获取实例" class="article-heading"><a href="#获取实例" class="headerlink" title="获取实例"></a>获取实例<a class="article-anchor" href="#获取实例" aria-hidden="true"></a></h2><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">use</span> <span class="title">EasyWeChat</span>\<span class="title">Foundation</span>\<span class="title">Application</span>;</div><div class="line"><span class="comment">//...</span></div><div class="line">$app = <span class="keyword">new</span> Application($options);</div><div class="line"></div><div class="line">$js = $app-&gt;js;</div></pre></td></tr></table></figure>
+<h2 id="API" class="article-heading"><a href="#API" class="headerlink" title="API"></a>API<a class="article-anchor" href="#API" aria-hidden="true"></a></h2><ul>
+<li><code>$js-&gt;config(array $APIs, $debug = false, $beta = false, $json = true);</code> 获取JSSDK的配置数组，默认返回 JSON 字符串，当 <code>$json</code> 为 <code>false</code> 时返回数组，你可以直接使用到网页中。</li>
+<li><code>$js-&gt;setUrl($url)</code> 设置当前URL，如果不想用默认读取的URL，可以使用此方法手动设置，通常不需要。</li>
+</ul>
+<p>example:</p>
+<p>我们可以生成js配置文件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://res.wx.qq.com/open/js/jweixin-1.0.0.js"</span> type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">    wx.config(&lt;?php echo $js-&gt;config(array('onMenuShareQQ', 'onMenuShareWeibo'), true) ?&gt;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://res.wx.qq.com/open/js/jweixin-1.0.0.js"</span> type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">wx.config(&#123;</div><div class="line">    debug: <span class="literal">true</span>,</div><div class="line">    appId: <span class="string">'wx3cf0f39249eb0e60'</span>,</div><div class="line">    timestamp: <span class="number">1430009304</span>,</div><div class="line">    nonceStr: <span class="string">'qey94m021ik'</span>,</div><div class="line">    signature: <span class="string">'4F76593A4245644FAE4E1BC940F6422A0C3EC03E'</span>,</div><div class="line">    jsApiList: [<span class="string">'onMenuShareQQ'</span>, <span class="string">'onMenuShareWeibo'</span>]</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>更多 JSSDK 的使用请参考 <a href="http://mp.weixin.qq.com/wiki/" target="_blank" rel="external">微信官方文档</a> 中 <strong>JSSDK章节</strong></p>
+
 
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-07-05T13:12:21.317Z" itemprop="dateModified">上次更新：2016-07-05</time>
-                
+                <time class="article-footer-updated" datetime="2016-07-05T13:17:07.872Z" itemprop="dateModified">上次更新：2016-07-05</time>
+                <a href="menu.html" class="article-footer-prev" title="菜单"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="payment.html" class="article-footer-next" title="支付"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
             </div>
@@ -200,7 +211,7 @@ var _hmt = _hmt || [];
         </div>
       </article>
       <aside id="sidebar" role="navigation">
-  <div class="inner"></div>
+  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><a href="installation.html" class="sidebar-link">安装</a><a href="tutorial.html" class="sidebar-link">小教程</a><a href="configuration.html" class="sidebar-link">配置</a><a href="integration.html" class="sidebar-link">在框架中使用</a><a href="troubleshooting.html" class="sidebar-link">常见问题汇总</a><strong class="sidebar-title">基本使用</strong><a href="server.html" class="sidebar-link">服务端</a><a href="messages.html" class="sidebar-link">消息</a><a href="message-transfer.html" class="sidebar-link">多客服消息转发</a><a href="events.html" class="sidebar-link">事件</a><a href="broadcast.html" class="sidebar-link">群发消息</a><a href="notice.html" class="sidebar-link">模板消息</a><a href="user.html" class="sidebar-link">用户</a><a href="user-tag.html" class="sidebar-link">用户标签</a><a href="user-group.html" class="sidebar-link">用户组</a><a href="oauth.html" class="sidebar-link">网页授权</a><a href="material.html" class="sidebar-link">素材管理</a><a href="menu.html" class="sidebar-link">菜单</a><a href="js.html" class="sidebar-link current">JSSDK</a><a href="payment.html" class="sidebar-link">支付</a><a href="merchant_payment.html" class="sidebar-link">企业支付</a><a href="lucky-money.html" class="sidebar-link">红包</a><a href="card.html" class="sidebar-link">卡券</a><a href="store.html" class="sidebar-link">小店</a><a href="poi.html" class="sidebar-link">门店</a><a href="staff.html" class="sidebar-link">客服</a><a href="anaylsis.html" class="sidebar-link">数据统计与分析</a><a href="qrcode.html" class="sidebar-link">二维码</a><a href="short-url.html" class="sidebar-link">短网址</a><a href="semantic.html" class="sidebar-link">语义理解</a><a href="reply.html" class="sidebar-link">自动回复</a><strong class="sidebar-title">自定义</strong><a href="access_token.html" class="sidebar-link">Access Token</a><a href="cache.html" class="sidebar-link">缓存</a><strong class="sidebar-title">其他</strong><a href="troubleshooting.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a><a href="roadmap.html" class="sidebar-link">路线图</a></div>
 </aside>
     </div>
   </div>
@@ -238,22 +249,22 @@ var _hmt = _hmt || [];
   <nav id="mobile-nav">
   <div id="mobile-nav-inner">
     <ul id="mobile-nav-list">
-      
+      <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">首页</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/" class="mobile-nav-link">文档</a></li><li class="mobile-nav-item"><a href="https://forum.easywechat.org" class="mobile-nav-link">论坛</a></li><li class="mobile-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="mobile-nav-link">视频</a></li><li class="mobile-nav-item"><a href="/news/" class="mobile-nav-link">动态</a></li><li class="mobile-nav-item"><a href="/donate.html" class="mobile-nav-link">打赏</a></li>
       <li class="mobile-nav-item">
         <a href="https://github.com/overtrue/wechat" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
       </li>
     </ul>
     
-      
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="installation.html" class="mobile-nav-link">安装</a><a href="tutorial.html" class="mobile-nav-link">小教程</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="integration.html" class="mobile-nav-link">在框架中使用</a><a href="troubleshooting.html" class="mobile-nav-link">常见问题汇总</a><strong class="mobile-nav-title">基本使用</strong><a href="server.html" class="mobile-nav-link">服务端</a><a href="messages.html" class="mobile-nav-link">消息</a><a href="message-transfer.html" class="mobile-nav-link">多客服消息转发</a><a href="events.html" class="mobile-nav-link">事件</a><a href="broadcast.html" class="mobile-nav-link">群发消息</a><a href="notice.html" class="mobile-nav-link">模板消息</a><a href="user.html" class="mobile-nav-link">用户</a><a href="user-tag.html" class="mobile-nav-link">用户标签</a><a href="user-group.html" class="mobile-nav-link">用户组</a><a href="oauth.html" class="mobile-nav-link">网页授权</a><a href="material.html" class="mobile-nav-link">素材管理</a><a href="menu.html" class="mobile-nav-link">菜单</a><a href="js.html" class="mobile-nav-link current">JSSDK</a><a href="payment.html" class="mobile-nav-link">支付</a><a href="merchant_payment.html" class="mobile-nav-link">企业支付</a><a href="lucky-money.html" class="mobile-nav-link">红包</a><a href="card.html" class="mobile-nav-link">卡券</a><a href="store.html" class="mobile-nav-link">小店</a><a href="poi.html" class="mobile-nav-link">门店</a><a href="staff.html" class="mobile-nav-link">客服</a><a href="anaylsis.html" class="mobile-nav-link">数据统计与分析</a><a href="qrcode.html" class="mobile-nav-link">二维码</a><a href="short-url.html" class="mobile-nav-link">短网址</a><a href="semantic.html" class="mobile-nav-link">语义理解</a><a href="reply.html" class="mobile-nav-link">自动回复</a><strong class="mobile-nav-title">自定义</strong><a href="access_token.html" class="mobile-nav-link">Access Token</a><a href="cache.html" class="mobile-nav-link">缓存</a><strong class="mobile-nav-title">其他</strong><a href="troubleshooting.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a><a href="roadmap.html" class="mobile-nav-link">路线图</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
-    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span></span></span>
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
     <select id="mobile-lang-select">
       
-        <option value="zh-cn" selected></option>
+        <option value="zh-cn" selected>简体中文</option>
       
-        <option value="en"></option>
+        <option value="en">English</option>
       
     </select>
   </div>
