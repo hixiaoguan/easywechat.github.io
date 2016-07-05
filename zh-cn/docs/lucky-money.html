@@ -10,9 +10,9 @@
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="http://easywechat.org/docs/lucky-money.html">
+      <link rel="alternative" hreflang="zh-cn" href="">
     
-      <link rel="alternative" hreflang="en" href="http://easywechat.org/en/docs/lucky-money.html">
+      <link rel="alternative" hreflang="en" href="">
     
   
   <!-- Icon -->
@@ -51,7 +51,7 @@
 <meta property="og:description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 现金红包文档 。
 配置与支付接口一样，红包接口也需要配置如下参数，需要特别注意的是，红包相关的全部接口都需要使用 SSL 证书，因此 cert_path 以及 cert_key 必须正确配置。
 &amp;lt;?phpuse EasyWeChat\Foundation\Application;$options = [    // payment    &apos;">
-<meta property="og:updated_time" content="2016-07-04T13:14:48.985Z">
+<meta property="og:updated_time" content="2016-07-05T10:39:44.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="红包">
 <meta name="twitter:description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 现金红包文档 。
@@ -111,23 +111,23 @@ var _hmt = _hmt || [];
     <header id="header" class="wrapper">
   <div id="header-inner" class="inner">
     <h1 id="logo-wrap">
-      <a href="/" id="logo">EasyWeChat</a>
+      <a href="" id="logo">EasyWeChat</a>
     </h1>
     <nav id="main-nav">
       <ul>
-        <li class="main-nav-item"><a href="/" class="main-nav-link">首页</a></li><li class="main-nav-item"><a href="/zh-cn/docs/" class="main-nav-link">文档</a></li><li class="main-nav-item"><a href="https://forum.easywechat.org" class="main-nav-link">论坛</a></li><li class="main-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="main-nav-link">视频</a></li><li class="main-nav-item"><a href="/news/" class="main-nav-link">动态</a></li><li class="main-nav-item"><a href="/donate.html" class="main-nav-link">打赏</a></li>
+        
         <li class="main-nav-item">
           <a href="https://github.com/overtrue/wechat" class="main-nav-link">GitHub</a>
         </li>
       </ul>
     </nav>
     <div id="lang-select-wrap">
-      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span></span></label>
       <select id="lang-select">
         
-          <option data-page-lang="zh-cn" value="zh-cn" selected>简体中文</option>
+          <option data-page-lang="zh-cn" value="zh-cn" selected></option>
         
-          <option data-page-lang="zh-cn" value="en">English</option>
+          <option data-page-lang="zh-cn" value="en"></option>
         
       </select>
     </div>
@@ -152,7 +152,7 @@ var _hmt = _hmt || [];
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">红包</h1>
-                <a href="https://github.com/EasyWeChat/docs/edit/zh-cn/lucky-money.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <!-- AD -->
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -167,27 +167,13 @@ var _hmt = _hmt || [];
               </script>
               <!-- /AD -->
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                <p>你在阅读本文之前确认你已经仔细阅读了：<a href="https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_1" target="_blank" rel="external">微信支付 | 现金红包文档 </a>。</p>
-<h2 id="配置" class="article-heading"><a href="#配置" class="headerlink" title="配置"></a>配置<a class="article-anchor" href="#配置" aria-hidden="true"></a></h2><p>与支付接口一样，红包接口也需要配置如下参数，需要特别注意的是，红包相关的全部接口<strong>都需要使用 SSL 证书</strong>，因此<strong> cert_path 以及 cert_key 必须正确配置</strong>。</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">EasyWeChat</span>\<span class="title">Foundation</span>\<span class="title">Application</span>;</span><br><span class="line"></span><br><span class="line">$options = [</span><br><span class="line">    <span class="comment">// payment</span></span><br><span class="line">    <span class="string">'payment'</span> =&gt; [</span><br><span class="line">        <span class="string">'merchant_id'</span>        =&gt; <span class="string">'your-mch-id'</span>,</span><br><span class="line">        <span class="string">'key'</span>                =&gt; <span class="string">'key-for-signature'</span>,</span><br><span class="line">        <span class="string">'cert_path'</span>          =&gt; <span class="string">'path/to/your/cert.pem'</span>,</span><br><span class="line">        <span class="string">'key_path'</span>           =&gt; <span class="string">'path/to/your/key'</span>,</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    ],</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$app = <span class="keyword">new</span> Application($options);</span><br><span class="line"></span><br><span class="line">$luckyMoney = $app-&gt;lucky_money;</span><br></pre></td></tr></table></figure>
-<h2 id="发送红包" class="article-heading"><a href="#发送红包" class="headerlink" title="发送红包"></a>发送红包<a class="article-anchor" href="#发送红包" aria-hidden="true"></a></h2><p>微信的现金红包分为<strong>普通红包</strong>和<strong>裂变红包</strong>两类。SDK 中对其分别进行了封装，同时也提供了一个统一的调用方法。</p>
-<h3 id="通用发送接口" class="article-heading"><a href="#通用发送接口" class="headerlink" title="通用发送接口"></a>通用发送接口<a class="article-anchor" href="#通用发送接口" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$luckyMoneyData = [</span><br><span class="line">    <span class="string">'mch_billno'</span>       =&gt; <span class="string">'xy123456'</span>,</span><br><span class="line">    <span class="string">'send_name'</span>        =&gt; <span class="string">'测试红包'</span>,</span><br><span class="line">    <span class="string">'re_openid'</span>        =&gt; <span class="string">'oxTWIuGaIt6gTKsQRLau2M0yL16E'</span>,</span><br><span class="line">    <span class="string">'total_num'</span>        =&gt; <span class="number">1</span>,  <span class="comment">//普通红包固定为1，裂变红包不小于3</span></span><br><span class="line">    <span class="string">'total_amount'</span>     =&gt; <span class="number">100</span>,  <span class="comment">//单位为分，普通红包不小于100，裂变红包不小于300</span></span><br><span class="line">    <span class="string">'wishing'</span>          =&gt; <span class="string">'祝福语'</span>,</span><br><span class="line">    <span class="string">'client_ip'</span>        =&gt; <span class="string">'192.168.0.1'</span>,  <span class="comment">//可不传，不传则由 SDK 取当前客户端 IP</span></span><br><span class="line">    <span class="string">'act_name'</span>         =&gt; <span class="string">'测试活动'</span>,</span><br><span class="line">    <span class="string">'remark'</span>           =&gt; <span class="string">'测试备注'</span>,</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$result = $luckyMoney-&gt;send($luckyMoneyData， \EasyWeChat\Payment\LuckyMoney\API::TYPE_NORMAL);</span><br><span class="line">或</span><br><span class="line">$result = $luckyMoney-&gt;send($luckyMoneyData， \EasyWeChat\Payment\LuckyMoney\API::TYPE_GROUP);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>不同类型红包所传参数有所差别，请参考官方文档中参数列表。</p>
-</blockquote>
-<h3 id="发送普通红包接口" class="article-heading"><a href="#发送普通红包接口" class="headerlink" title="发送普通红包接口"></a>发送普通红包接口<a class="article-anchor" href="#发送普通红包接口" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$luckyMoneyData = [</span><br><span class="line">    <span class="string">'mch_billno'</span>       =&gt; <span class="string">'xy123456'</span>,</span><br><span class="line">    <span class="string">'send_name'</span>        =&gt; <span class="string">'测试红包'</span>,</span><br><span class="line">    <span class="string">'re_openid'</span>        =&gt; <span class="string">'oxTWIuGaIt6gTKsQRLau2M0yL16E'</span>,</span><br><span class="line">    <span class="string">'total_num'</span>        =&gt; <span class="number">1</span>,  <span class="comment">//固定为1，可不传</span></span><br><span class="line">    <span class="string">'total_amount'</span>     =&gt; <span class="number">100</span>,  <span class="comment">//单位为分，不小于300</span></span><br><span class="line">    <span class="string">'wishing'</span>          =&gt; <span class="string">'祝福语'</span>,</span><br><span class="line">    <span class="string">'client_ip'</span>        =&gt; <span class="string">'192.168.0.1'</span>,  <span class="comment">//可不传，不传则由 SDK 取当前客户端 IP</span></span><br><span class="line">    <span class="string">'act_name'</span>         =&gt; <span class="string">'测试活动'</span>,</span><br><span class="line">    <span class="string">'remark'</span>           =&gt; <span class="string">'测试备注'</span>,</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$result = $luckyMoney-&gt;sendNormal($luckyMoneyData);</span><br></pre></td></tr></table></figure>
-<h3 id="发送裂变红包接口" class="article-heading"><a href="#发送裂变红包接口" class="headerlink" title="发送裂变红包接口"></a>发送裂变红包接口<a class="article-anchor" href="#发送裂变红包接口" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$luckyMoneyData = [</span><br><span class="line">    <span class="string">'mch_billno'</span>       =&gt; <span class="string">'xy123456'</span>,</span><br><span class="line">    <span class="string">'send_name'</span>        =&gt; <span class="string">'测试红包'</span>,</span><br><span class="line">    <span class="string">'re_openid'</span>        =&gt; <span class="string">'oxTWIuGaIt6gTKsQRLau2M0yL16E'</span>,</span><br><span class="line">    <span class="string">'total_num'</span>        =&gt; <span class="number">3</span>,  <span class="comment">//不小于3</span></span><br><span class="line">    <span class="string">'total_amount'</span>     =&gt; <span class="number">300</span>,  <span class="comment">//单位为分，不小于300</span></span><br><span class="line">    <span class="string">'wishing'</span>          =&gt; <span class="string">'祝福语'</span>,</span><br><span class="line">    <span class="string">'client_ip'</span>        =&gt; <span class="string">'192.168.0.1'</span>,  <span class="comment">//可不传，不传则由 SDK 取当前客户端 IP</span></span><br><span class="line">    <span class="string">'act_name'</span>         =&gt; <span class="string">'测试活动'</span>,</span><br><span class="line">    <span class="string">'remark'</span>           =&gt; <span class="string">'测试备注'</span>,</span><br><span class="line">    <span class="string">'amt_type'</span>         =&gt; <span class="string">'ALL_RAND'</span>,  <span class="comment">//可不传</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$result = $luckyMoney-&gt;sendGroup($luckyMoneyData);</span><br></pre></td></tr></table></figure>
-<h2 id="红包预下单接口" class="article-heading"><a href="#红包预下单接口" class="headerlink" title="红包预下单接口"></a>红包预下单接口<a class="article-anchor" href="#红包预下单接口" aria-hidden="true"></a></h2><p>红包预下单接口是为摇一摇红包接口配合使用的，在开发摇一摇周边的摇红包相关功能时，需要调用本接口获取红包单号。详情参见<a href="http://mp.weixin.qq.com/wiki/7/0ddd50ed2421b99fedd071281c074aab.html#.E7.BA.A2.E5.8C.85.E9.A2.84.E4.B8.8B.E5.8D.95.E6.8E.A5.E5.8F.A3" target="_blank" rel="external">官方文档</a></p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$luckyMoneyData = [</span><br><span class="line">    <span class="string">'hb_type'</span>          =&gt; <span class="string">'NORMAL'</span>,  <span class="comment">//NORMAL 或 GROUP</span></span><br><span class="line">    <span class="string">'mch_billno'</span>       =&gt; <span class="string">'xy123456'</span>,</span><br><span class="line">    <span class="string">'send_name'</span>        =&gt; <span class="string">'测试红包'</span>,</span><br><span class="line">    <span class="string">'re_openid'</span>        =&gt; <span class="string">'oxTWIuGaIt6gTKsQRLau2M0yL16E'</span>,</span><br><span class="line">    <span class="string">'total_num'</span>        =&gt; <span class="number">1</span>,  <span class="comment">//普通红包固定为1，裂变红包不小于3</span></span><br><span class="line">    <span class="string">'total_amount'</span>     =&gt; <span class="number">100</span>,  <span class="comment">//单位为分，普通红包不小于100，裂变红包不小于300</span></span><br><span class="line">    <span class="string">'wishing'</span>          =&gt; <span class="string">'祝福语'</span>,</span><br><span class="line">    <span class="string">'client_ip'</span>        =&gt; <span class="string">'192.168.0.1'</span>,  <span class="comment">//可不传，不传则由 SDK 取当前客户端 IP</span></span><br><span class="line">    <span class="string">'act_name'</span>         =&gt; <span class="string">'测试活动'</span>,</span><br><span class="line">    <span class="string">'remark'</span>           =&gt; <span class="string">'测试备注'</span>,</span><br><span class="line">    <span class="string">'amt_type'</span>         =&gt; <span class="string">'ALL_RAND'</span>,</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">$result = $luckyMoney-&gt;prepare($luckyMoneyData);</span><br></pre></td></tr></table></figure>
-<h2 id="查询红包信息" class="article-heading"><a href="#查询红包信息" class="headerlink" title="查询红包信息"></a>查询红包信息<a class="article-anchor" href="#查询红包信息" aria-hidden="true"></a></h2><p>用于商户对已发放的红包进行查询红包的具体信息以及领取情况 ，普通红包和裂变包均使用这一接口进行查询。</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$mchBillNo = <span class="string">"商户系统内部的订单号（mch_billno）"</span>;</span><br><span class="line">$luckyMoney-&gt;query($mchBillNo);</span><br></pre></td></tr></table></figure>
-
+                
 
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-07-04T13:14:48.985Z" itemprop="dateModified">上次更新：2016-07-04</time>
-                <a href="merchant_payment.html" class="article-footer-prev" title="企业支付"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="card.html" class="article-footer-next" title="卡券"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2016-07-05T10:39:44.898Z" itemprop="dateModified">上次更新：2016-07-05</time>
+                
               </footer>
               
             </div>
@@ -214,7 +200,7 @@ var _hmt = _hmt || [];
         </div>
       </article>
       <aside id="sidebar" role="navigation">
-  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><a href="installation.html" class="sidebar-link">安装</a><a href="tutorial.html" class="sidebar-link">小教程</a><a href="configuration.html" class="sidebar-link">配置</a><a href="integration.html" class="sidebar-link">在框架中使用</a><a href="troubleshooting.html" class="sidebar-link">常见问题汇总</a><strong class="sidebar-title">基本使用</strong><a href="server.html" class="sidebar-link">服务端</a><a href="messages.html" class="sidebar-link">消息</a><a href="message-transfer.html" class="sidebar-link">多客服消息转发</a><a href="events.html" class="sidebar-link">事件</a><a href="broadcast.html" class="sidebar-link">群发消息</a><a href="notice.html" class="sidebar-link">模板消息</a><a href="user.html" class="sidebar-link">用户</a><a href="user-tag.html" class="sidebar-link">用户标签</a><a href="user-group.html" class="sidebar-link">用户组</a><a href="oauth.html" class="sidebar-link">网页授权</a><a href="material.html" class="sidebar-link">素材管理</a><a href="menu.html" class="sidebar-link">菜单</a><a href="js.html" class="sidebar-link">JSSDK</a><a href="payment.html" class="sidebar-link">支付</a><a href="merchant_payment.html" class="sidebar-link">企业支付</a><a href="lucky-money.html" class="sidebar-link current">红包</a><a href="card.html" class="sidebar-link">卡券</a><a href="store.html" class="sidebar-link">小店</a><a href="poi.html" class="sidebar-link">门店</a><a href="staff.html" class="sidebar-link">客服</a><a href="anaylsis.html" class="sidebar-link">数据统计与分析</a><a href="qrcode.html" class="sidebar-link">二维码</a><a href="short-url.html" class="sidebar-link">短网址</a><a href="semantic.html" class="sidebar-link">语义理解</a><a href="reply.html" class="sidebar-link">自动回复</a><strong class="sidebar-title">自定义</strong><a href="access_token.html" class="sidebar-link">Access Token</a><a href="cache.html" class="sidebar-link">缓存</a><strong class="sidebar-title">其他</strong><a href="troubleshooting.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a><a href="roadmap.html" class="sidebar-link">路线图</a></div>
+  <div class="inner"></div>
 </aside>
     </div>
   </div>
@@ -252,22 +238,22 @@ var _hmt = _hmt || [];
   <nav id="mobile-nav">
   <div id="mobile-nav-inner">
     <ul id="mobile-nav-list">
-      <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">首页</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/" class="mobile-nav-link">文档</a></li><li class="mobile-nav-item"><a href="https://forum.easywechat.org" class="mobile-nav-link">论坛</a></li><li class="mobile-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="mobile-nav-link">视频</a></li><li class="mobile-nav-item"><a href="/news/" class="mobile-nav-link">动态</a></li><li class="mobile-nav-item"><a href="/donate.html" class="mobile-nav-link">打赏</a></li>
+      
       <li class="mobile-nav-item">
         <a href="https://github.com/overtrue/wechat" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="installation.html" class="mobile-nav-link">安装</a><a href="tutorial.html" class="mobile-nav-link">小教程</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="integration.html" class="mobile-nav-link">在框架中使用</a><a href="troubleshooting.html" class="mobile-nav-link">常见问题汇总</a><strong class="mobile-nav-title">基本使用</strong><a href="server.html" class="mobile-nav-link">服务端</a><a href="messages.html" class="mobile-nav-link">消息</a><a href="message-transfer.html" class="mobile-nav-link">多客服消息转发</a><a href="events.html" class="mobile-nav-link">事件</a><a href="broadcast.html" class="mobile-nav-link">群发消息</a><a href="notice.html" class="mobile-nav-link">模板消息</a><a href="user.html" class="mobile-nav-link">用户</a><a href="user-tag.html" class="mobile-nav-link">用户标签</a><a href="user-group.html" class="mobile-nav-link">用户组</a><a href="oauth.html" class="mobile-nav-link">网页授权</a><a href="material.html" class="mobile-nav-link">素材管理</a><a href="menu.html" class="mobile-nav-link">菜单</a><a href="js.html" class="mobile-nav-link">JSSDK</a><a href="payment.html" class="mobile-nav-link">支付</a><a href="merchant_payment.html" class="mobile-nav-link">企业支付</a><a href="lucky-money.html" class="mobile-nav-link current">红包</a><a href="card.html" class="mobile-nav-link">卡券</a><a href="store.html" class="mobile-nav-link">小店</a><a href="poi.html" class="mobile-nav-link">门店</a><a href="staff.html" class="mobile-nav-link">客服</a><a href="anaylsis.html" class="mobile-nav-link">数据统计与分析</a><a href="qrcode.html" class="mobile-nav-link">二维码</a><a href="short-url.html" class="mobile-nav-link">短网址</a><a href="semantic.html" class="mobile-nav-link">语义理解</a><a href="reply.html" class="mobile-nav-link">自动回复</a><strong class="mobile-nav-title">自定义</strong><a href="access_token.html" class="mobile-nav-link">Access Token</a><a href="cache.html" class="mobile-nav-link">缓存</a><strong class="mobile-nav-title">其他</strong><a href="troubleshooting.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a><a href="roadmap.html" class="mobile-nav-link">路线图</a>
+      
     
   </div>
   <div id="mobile-lang-select-wrap">
-    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span></span></span>
     <select id="mobile-lang-select">
       
-        <option value="zh-cn" selected>简体中文</option>
+        <option value="zh-cn" selected></option>
       
-        <option value="en">English</option>
+        <option value="en"></option>
       
     </select>
   </div>

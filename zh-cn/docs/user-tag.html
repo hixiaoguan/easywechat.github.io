@@ -10,9 +10,9 @@
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="http://easywechat.org/docs/user-tag.html">
+      <link rel="alternative" hreflang="zh-cn" href="">
     
-      <link rel="alternative" hreflang="en" href="http://easywechat.org/en/docs/user-tag.html">
+      <link rel="alternative" hreflang="en" href="">
     
   
   <!-- Icon -->
@@ -55,7 +55,7 @@ $tags">
 API获取所有标签$tag-&amp;gt;lists();
 example:
 $tags">
-<meta property="og:updated_time" content="2016-07-04T13:14:48.989Z">
+<meta property="og:updated_time" content="2016-07-05T10:39:44.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用户标签">
 <meta name="twitter:description" content="用户标签的使用就非常简单了，基本的增删改查。
@@ -117,23 +117,23 @@ var _hmt = _hmt || [];
     <header id="header" class="wrapper">
   <div id="header-inner" class="inner">
     <h1 id="logo-wrap">
-      <a href="/" id="logo">EasyWeChat</a>
+      <a href="" id="logo">EasyWeChat</a>
     </h1>
     <nav id="main-nav">
       <ul>
-        <li class="main-nav-item"><a href="/" class="main-nav-link">首页</a></li><li class="main-nav-item"><a href="/zh-cn/docs/" class="main-nav-link">文档</a></li><li class="main-nav-item"><a href="https://forum.easywechat.org" class="main-nav-link">论坛</a></li><li class="main-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="main-nav-link">视频</a></li><li class="main-nav-item"><a href="/news/" class="main-nav-link">动态</a></li><li class="main-nav-item"><a href="/donate.html" class="main-nav-link">打赏</a></li>
+        
         <li class="main-nav-item">
           <a href="https://github.com/overtrue/wechat" class="main-nav-link">GitHub</a>
         </li>
       </ul>
     </nav>
     <div id="lang-select-wrap">
-      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span></span></label>
       <select id="lang-select">
         
-          <option data-page-lang="zh-cn" value="zh-cn" selected>简体中文</option>
+          <option data-page-lang="zh-cn" value="zh-cn" selected></option>
         
-          <option data-page-lang="zh-cn" value="en">English</option>
+          <option data-page-lang="zh-cn" value="en"></option>
         
       </select>
     </div>
@@ -158,7 +158,7 @@ var _hmt = _hmt || [];
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">用户标签</h1>
-                <a href="https://github.com/EasyWeChat/docs/edit/zh-cn/user-tag.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <!-- AD -->
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -173,32 +173,13 @@ var _hmt = _hmt || [];
               </script>
               <!-- /AD -->
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                <p>用户标签的使用就非常简单了，基本的增删改查。</p>
-<h2 id="获取实例" class="article-heading"><a href="#获取实例" class="headerlink" title="获取实例"></a>获取实例<a class="article-anchor" href="#获取实例" aria-hidden="true"></a></h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">use</span> <span class="title">EasyWeChat</span>\<span class="title">Foundation</span>\<span class="title">Application</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">$app = <span class="keyword">new</span> Application($options);</span><br><span class="line"></span><br><span class="line">$tag = $app-&gt;user_tag; <span class="comment">// $user['user_tag']</span></span><br></pre></td></tr></table></figure>
-<h2 id="API" class="article-heading"><a href="#API" class="headerlink" title="API"></a>API<a class="article-anchor" href="#API" aria-hidden="true"></a></h2><h3 id="获取所有标签" class="article-heading"><a href="#获取所有标签" class="headerlink" title="获取所有标签"></a>获取所有标签<a class="article-anchor" href="#获取所有标签" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tag-&gt;lists();</span><br></pre></td></tr></table></figure>
-<p>example:</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tags = $tag-&gt;lists();</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     "tags": [</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line"><span class="comment">//             "id": 0,</span></span><br><span class="line"><span class="comment">//             "name": "标签1",</span></span><br><span class="line"><span class="comment">//             "count": 72596</span></span><br><span class="line"><span class="comment">//         &#125;,</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line"><span class="comment">//             "id": 1,</span></span><br><span class="line"><span class="comment">//             "name": "标签2",</span></span><br><span class="line"><span class="comment">//             "count": 36</span></span><br><span class="line"><span class="comment">//         &#125;,</span></span><br><span class="line"><span class="comment">//         ...</span></span><br><span class="line"><span class="comment">//     ]</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">var_dump($tags-&gt;tags[<span class="number">0</span>][<span class="string">'name'</span>]) <span class="comment">// “标签1”</span></span><br></pre></td></tr></table></figure>
-<h3 id="创建标签" class="article-heading"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签<a class="article-anchor" href="#创建标签" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tag-&gt;create($name);</span><br></pre></td></tr></table></figure>
-<p>example:</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tag-&gt;create(<span class="string">'测试标签'</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="修改标签信息" class="article-heading"><a href="#修改标签信息" class="headerlink" title="修改标签信息"></a>修改标签信息<a class="article-anchor" href="#修改标签信息" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tag-&gt;update($tagId, $name);</span><br></pre></td></tr></table></figure>
-<p>example:</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tag-&gt;update(<span class="number">12</span>, <span class="string">"新的名称"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="删除标签" class="article-heading"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签<a class="article-anchor" href="#删除标签" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tag-&gt;delete($tagId);</span><br></pre></td></tr></table></figure>
-<p>example:</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tag-&gt;delete($tagId);</span><br></pre></td></tr></table></figure>
-<h3 id="获取指定-openid-用户身上的标签" class="article-heading"><a href="#获取指定-openid-用户身上的标签" class="headerlink" title="获取指定 openid 用户身上的标签"></a>获取指定 openid 用户身上的标签<a class="article-anchor" href="#获取指定-openid-用户身上的标签" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$userTags = $tag-&gt;userTags($openId);</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     "tagid_list":["标签1","标签2"]</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="获取标签下粉丝列表" class="article-heading"><a href="#获取标签下粉丝列表" class="headerlink" title="获取标签下粉丝列表"></a>获取标签下粉丝列表<a class="article-anchor" href="#获取标签下粉丝列表" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$tag-&gt;usersOfTag($tagId);</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//   "count":2,//这次获取的粉丝数量</span></span><br><span class="line"><span class="comment">//   "data":&#123;//粉丝列表</span></span><br><span class="line"><span class="comment">//      "openid":[</span></span><br><span class="line"><span class="comment">//          "ocYxcuAEy30bX0NXmGn4ypqx3tI0",</span></span><br><span class="line"><span class="comment">//          "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</span></span><br><span class="line"><span class="comment">//      ]</span></span><br><span class="line"><span class="comment">//   &#125;,</span></span><br><span class="line"><span class="comment">//   "next_openid":"ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"//拉取列表最后一个用户的openid</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="批量为用户打标签" class="article-heading"><a href="#批量为用户打标签" class="headerlink" title="批量为用户打标签"></a>批量为用户打标签<a class="article-anchor" href="#批量为用户打标签" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$openIds = [$openId1, $openId2, ...];</span><br><span class="line">$tag-&gt;batchTagUsers($openIds, $tagId);</span><br></pre></td></tr></table></figure>
-<h3 id="批量为用户取消标签" class="article-heading"><a href="#批量为用户取消标签" class="headerlink" title="批量为用户取消标签"></a>批量为用户取消标签<a class="article-anchor" href="#批量为用户取消标签" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$openIds = [$openId1, $openId2, ...];</span><br><span class="line">$tag-&gt;batchUntagUsers($openIds, $tagId);</span><br></pre></td></tr></table></figure>
-<p>关于用户管理请参考微信官方文档：<a href="http://mp.weixin.qq.com/wiki/" target="_blank" rel="external">http://mp.weixin.qq.com/wiki/</a> <code>用户管理</code> 章节。</p>
-
+                
 
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-07-04T13:14:48.989Z" itemprop="dateModified">上次更新：2016-07-04</time>
-                <a href="user.html" class="article-footer-prev" title="用户"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="user-group.html" class="article-footer-next" title="用户组"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2016-07-05T10:39:44.902Z" itemprop="dateModified">上次更新：2016-07-05</time>
+                
               </footer>
               
             </div>
@@ -225,7 +206,7 @@ var _hmt = _hmt || [];
         </div>
       </article>
       <aside id="sidebar" role="navigation">
-  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><a href="installation.html" class="sidebar-link">安装</a><a href="tutorial.html" class="sidebar-link">小教程</a><a href="configuration.html" class="sidebar-link">配置</a><a href="integration.html" class="sidebar-link">在框架中使用</a><a href="troubleshooting.html" class="sidebar-link">常见问题汇总</a><strong class="sidebar-title">基本使用</strong><a href="server.html" class="sidebar-link">服务端</a><a href="messages.html" class="sidebar-link">消息</a><a href="message-transfer.html" class="sidebar-link">多客服消息转发</a><a href="events.html" class="sidebar-link">事件</a><a href="broadcast.html" class="sidebar-link">群发消息</a><a href="notice.html" class="sidebar-link">模板消息</a><a href="user.html" class="sidebar-link">用户</a><a href="user-tag.html" class="sidebar-link current">用户标签</a><a href="user-group.html" class="sidebar-link">用户组</a><a href="oauth.html" class="sidebar-link">网页授权</a><a href="material.html" class="sidebar-link">素材管理</a><a href="menu.html" class="sidebar-link">菜单</a><a href="js.html" class="sidebar-link">JSSDK</a><a href="payment.html" class="sidebar-link">支付</a><a href="merchant_payment.html" class="sidebar-link">企业支付</a><a href="lucky-money.html" class="sidebar-link">红包</a><a href="card.html" class="sidebar-link">卡券</a><a href="store.html" class="sidebar-link">小店</a><a href="poi.html" class="sidebar-link">门店</a><a href="staff.html" class="sidebar-link">客服</a><a href="anaylsis.html" class="sidebar-link">数据统计与分析</a><a href="qrcode.html" class="sidebar-link">二维码</a><a href="short-url.html" class="sidebar-link">短网址</a><a href="semantic.html" class="sidebar-link">语义理解</a><a href="reply.html" class="sidebar-link">自动回复</a><strong class="sidebar-title">自定义</strong><a href="access_token.html" class="sidebar-link">Access Token</a><a href="cache.html" class="sidebar-link">缓存</a><strong class="sidebar-title">其他</strong><a href="troubleshooting.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a><a href="roadmap.html" class="sidebar-link">路线图</a></div>
+  <div class="inner"></div>
 </aside>
     </div>
   </div>
@@ -263,22 +244,22 @@ var _hmt = _hmt || [];
   <nav id="mobile-nav">
   <div id="mobile-nav-inner">
     <ul id="mobile-nav-list">
-      <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">首页</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/" class="mobile-nav-link">文档</a></li><li class="mobile-nav-item"><a href="https://forum.easywechat.org" class="mobile-nav-link">论坛</a></li><li class="mobile-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="mobile-nav-link">视频</a></li><li class="mobile-nav-item"><a href="/news/" class="mobile-nav-link">动态</a></li><li class="mobile-nav-item"><a href="/donate.html" class="mobile-nav-link">打赏</a></li>
+      
       <li class="mobile-nav-item">
         <a href="https://github.com/overtrue/wechat" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="installation.html" class="mobile-nav-link">安装</a><a href="tutorial.html" class="mobile-nav-link">小教程</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="integration.html" class="mobile-nav-link">在框架中使用</a><a href="troubleshooting.html" class="mobile-nav-link">常见问题汇总</a><strong class="mobile-nav-title">基本使用</strong><a href="server.html" class="mobile-nav-link">服务端</a><a href="messages.html" class="mobile-nav-link">消息</a><a href="message-transfer.html" class="mobile-nav-link">多客服消息转发</a><a href="events.html" class="mobile-nav-link">事件</a><a href="broadcast.html" class="mobile-nav-link">群发消息</a><a href="notice.html" class="mobile-nav-link">模板消息</a><a href="user.html" class="mobile-nav-link">用户</a><a href="user-tag.html" class="mobile-nav-link current">用户标签</a><a href="user-group.html" class="mobile-nav-link">用户组</a><a href="oauth.html" class="mobile-nav-link">网页授权</a><a href="material.html" class="mobile-nav-link">素材管理</a><a href="menu.html" class="mobile-nav-link">菜单</a><a href="js.html" class="mobile-nav-link">JSSDK</a><a href="payment.html" class="mobile-nav-link">支付</a><a href="merchant_payment.html" class="mobile-nav-link">企业支付</a><a href="lucky-money.html" class="mobile-nav-link">红包</a><a href="card.html" class="mobile-nav-link">卡券</a><a href="store.html" class="mobile-nav-link">小店</a><a href="poi.html" class="mobile-nav-link">门店</a><a href="staff.html" class="mobile-nav-link">客服</a><a href="anaylsis.html" class="mobile-nav-link">数据统计与分析</a><a href="qrcode.html" class="mobile-nav-link">二维码</a><a href="short-url.html" class="mobile-nav-link">短网址</a><a href="semantic.html" class="mobile-nav-link">语义理解</a><a href="reply.html" class="mobile-nav-link">自动回复</a><strong class="mobile-nav-title">自定义</strong><a href="access_token.html" class="mobile-nav-link">Access Token</a><a href="cache.html" class="mobile-nav-link">缓存</a><strong class="mobile-nav-title">其他</strong><a href="troubleshooting.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a><a href="roadmap.html" class="mobile-nav-link">路线图</a>
+      
     
   </div>
   <div id="mobile-lang-select-wrap">
-    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span></span></span>
     <select id="mobile-lang-select">
       
-        <option value="zh-cn" selected>简体中文</option>
+        <option value="zh-cn" selected></option>
       
-        <option value="en">English</option>
+        <option value="en"></option>
       
     </select>
   </div>
