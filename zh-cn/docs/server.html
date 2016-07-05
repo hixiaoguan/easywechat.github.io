@@ -10,6 +10,10 @@
   <!-- Alternative links -->
   
     
+      <link rel="alternative" hreflang="zh-cn" href="">
+    
+      <link rel="alternative" hreflang="en" href="">
+    
   
   <!-- Icon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
@@ -48,7 +52,7 @@
 服务端的作用呢，在整个微信开发中主要是负责 接收用户发送过来的消息，还有 用户触发的一系列事件。
 首先我们得厘清一下消息与事件的回复，当你收到用户消息后（消息由微信服务器推送到你的服务器），在你对消息进行一些处理后，不管是选择回复一个消息还是什么不都回给用户，你也应该给微信服">
 <meta property="og:image" content="http://easywechat.org/images/emoji/heart.png">
-<meta property="og:updated_time" content="2016-07-05T13:07:50.603Z">
+<meta property="og:updated_time" content="2016-07-05T13:12:21.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务端">
 <meta name="twitter:description" content="我们在入门小教程一节以服务端为例讲解了一个基本的消息的处理，这里就不再讲服务器验证的流程了，请直接参考前面的入门实例即可。
@@ -123,6 +127,10 @@ var _hmt = _hmt || [];
       <label id="lang-select-label"><i class="fa fa-globe"></i><span></span></label>
       <select id="lang-select">
         
+          <option data-page-lang="zh-cn" value="zh-cn" selected></option>
+        
+          <option data-page-lang="zh-cn" value="en"></option>
+        
       </select>
     </div>
     
@@ -166,7 +174,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-07-05T13:07:50.603Z" itemprop="dateModified">上次更新：2016-07-05</time>
+                <time class="article-footer-updated" datetime="2016-07-05T13:12:21.317Z" itemprop="dateModified">上次更新：2016-07-05</time>
                 
               </footer>
               
@@ -205,6 +213,16 @@ var _hmt = _hmt || [];
     <div class="inner">
       <div class="friend-links">
         
+        <a href="http://overtrue.me" target="_blank">overtrue.me</a>
+        
+        <a href="http://laravel.so" target="_blank">Laravel 技巧</a>
+        
+        <a href="https://laravist.com" target="_blank">Laravist 视频教程</a>
+        
+        <a href="https://phphub.org" target="_blank">PHPHub</a>
+        
+        <a href="http://laravelacademy.org" target="_blank">Laravel 学院</a>
+        
       </div>
       <div id="footer-copyright">
         &copy; 2016 <a href="http://overtrue.me/" target="_blank">overtrue</a><br>
@@ -234,6 +252,10 @@ var _hmt = _hmt || [];
   <div id="mobile-lang-select-wrap">
     <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span></span></span>
     <select id="mobile-lang-select">
+      
+        <option value="zh-cn" selected></option>
+      
+        <option value="en"></option>
       
     </select>
   </div>
