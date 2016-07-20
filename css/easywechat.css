@@ -149,7 +149,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   letter-spacing: 0.6px;
-  line-height: 30px;
+  line-height: 28px;
 }
 .wrapper:before,
 .wrapper:after {
@@ -493,8 +493,8 @@ body.home {
   font-size: 24px;
 }
 .intro-feature-desc {
-  margin: 30px 0;
-  line-height: 30px;
+  margin: 28px 0;
+  line-height: 28px;
 }
 #intro-cmd-wrap {
   max-width: 700px;
@@ -759,7 +759,7 @@ a.article-title:hover {
   display: inline-block;
 }
 .article-content {
-  line-height: 30px;
+  line-height: 28px;
   color: #444;
 }
 @media print {
@@ -1081,7 +1081,7 @@ a.article-title:hover {
   color: #009cf4;
 }
 .plugin-desc {
-  line-height: 30px;
+  line-height: 28px;
   margin: 1em 0;
 }
 .plugin-tag-list {
@@ -1182,7 +1182,7 @@ a.article-title:hover {
   display: block;
   color: #444;
   text-decoration: none;
-  line-height: 30px;
+  line-height: 28px;
 }
 .archive-post-link:before,
 .archive-post-link:after {
