@@ -61,7 +61,7 @@
   - 语音（voice）：2M，播放长度不超过 60s，支持 mp3/wma/wav/amr 格式
   - 视频（video）：10MB，支持MP4格式
   - 缩略图（thumb）：64KB，支持">
-<meta property="og:updated_time" content="2016-07-20T06:21:43.057Z">
+<meta property="og:updated_time" content="2016-07-21T06:49:07.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="素材管理">
 <meta name="twitter:description" content="在微信里的图片，音乐，视频等等都需要先上传到微信服务器作为素材才可以在消息中使用。
@@ -215,7 +215,8 @@ var _hmt = _hmt || [];
 <li><code>$index</code> 要更新的文章在图文消息中的位置（多图文消息时，此字段才有意义，单图片忽略此参数），第一篇为 0；</li>
 </ul>
 <figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$result = $material-&gt;updateArticle($mediaId, <span class="keyword">new</span> Article(...));</div><div class="line">$mediaId = $result-&gt;media_id;</div><div class="line"></div><div class="line"><span class="comment">// or</span></div><div class="line"></div><div class="line">$result = $material-&gt;updateArticle($mediaId, [</div><div class="line">    <span class="string">'title'</span>          =&gt; <span class="string">'xxx'</span>,</div><div class="line">    <span class="string">'thumb_media_id'</span> =&gt; <span class="string">'xxx'</span>,</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  ]);</div><div class="line"></div><div class="line"><span class="comment">// 指定更新多图文中的第 2 篇</span></div><div class="line">$result = $material-&gt;updateArticle($mediaId, <span class="keyword">new</span> Article(...), <span class="number">1</span>); <span class="comment">// 第 2 篇</span></div></pre></td></tr></table></figure>
-<h3 id="上传永久文章内容图片" class="article-heading"><a href="#上传永久文章内容图片" class="headerlink" title="上传永久文章内容图片"></a>上传永久文章内容图片<a class="article-anchor" href="#上传永久文章内容图片" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$result = $material-&gt;uploadArticleImage($path);</div><div class="line">$mediaId = $result-&gt;media_id;</div><div class="line"><span class="comment">// &#123;</span></div><div class="line"><span class="comment">//    "media_id":MEDIA_ID,</span></div><div class="line"><span class="comment">// &#125;</span></div></pre></td></tr></table></figure>
+<h3 id="上传永久文章内容图片" class="article-heading"><a href="#上传永久文章内容图片" class="headerlink" title="上传永久文章内容图片"></a>上传永久文章内容图片<a class="article-anchor" href="#上传永久文章内容图片" aria-hidden="true"></a></h3><p>返回值中 url 就是上传图片的 URL，可用于后续群发中，放置到图文消息中。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$result = $material-&gt;uploadArticleImage($path);</div><div class="line">$url = $result-&gt;url;</div><div class="line"><span class="comment">//&#123;</span></div><div class="line"><span class="comment">//    "url":  "http://mmbiz.qpic.cn/mmbiz/gLO17UPS6FS2xsypf378iaNhWacZ1G1UplZYWEYfwvuU6Ont96b1roYsCNFwaRrSaKTPCUdBK9DgEHicsKwWCBRQ/0"</span></div><div class="line"><span class="comment">//&#125;</span></div></pre></td></tr></table></figure>
 <h3 id="获取永久素材" class="article-heading"><a href="#获取永久素材" class="headerlink" title="获取永久素材"></a>获取永久素材<a class="article-anchor" href="#获取永久素材" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$resource = $material-&gt;get($mediaId);</div></pre></td></tr></table></figure>
 <p>如果请求的素材为图文消息，则响应如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line"> &quot;news_item&quot;: [</div><div class="line">       &#123;</div><div class="line">       &quot;title&quot;:TITLE,</div><div class="line">       &quot;thumb_media_id&quot;::THUMB_MEDIA_ID,</div><div class="line">       &quot;show_cover_pic&quot;:SHOW_COVER_PIC(0/1),</div><div class="line">       &quot;author&quot;:AUTHOR,</div><div class="line">       &quot;digest&quot;:DIGEST,</div><div class="line">       &quot;content&quot;:CONTENT,</div><div class="line">       &quot;url&quot;:URL,</div><div class="line">       &quot;content_source_url&quot;:CONTENT_SOURCE_URL</div><div class="line">       &#125;,</div><div class="line">       //多图文消息有多篇文章</div><div class="line">    ]</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
@@ -265,7 +266,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-07-20T06:21:43.057Z" itemprop="dateModified">上次更新：2016-07-20</time>
+                <time class="article-footer-updated" datetime="2016-07-21T06:49:07.295Z" itemprop="dateModified">上次更新：2016-07-21</time>
                 <a href="oauth.html" class="article-footer-prev" title="网页授权"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="menu.html" class="article-footer-next" title="菜单"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
