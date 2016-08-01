@@ -57,7 +57,7 @@ $result = $card-&amp;gt;getC">
 API列表获取卡券颜色$card-&amp;gt;getColors();
 example:
 $result = $card-&amp;gt;getC">
-<meta property="og:updated_time" content="2016-08-01T02:16:07.170Z">
+<meta property="og:updated_time" content="2016-08-01T08:22:07.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卡券">
 <meta name="twitter:description" content="Version &amp;gt;=3.1.2
@@ -354,7 +354,7 @@ var _hmt = _hmt || [];
 <li><code>optionalForm</code> array - 会员卡激活时的选填项</li>
 </ul>
 <p>example:</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$cardId = <span class="string">'pdkJ9uJYAyfLXsUCwI2LdH2Pn1AU'</span>;</div><div class="line"></div><div class="line">$requiredForm                         = [];</div><div class="line">$requiredForm[<span class="string">'common_field_id_list'</span>] = [</div><div class="line">  <span class="string">'USER_FORM_INFO_FLAG_MOBILE'</span>,</div><div class="line">  <span class="string">'USER_FORM_INFO_FLAG_LOCATION'</span>,</div><div class="line">  <span class="string">'USER_FORM_INFO_FLAG_BIRTHDAY'</span>,</div><div class="line">];</div><div class="line">$requiredForm[<span class="string">'custom_field_list'</span>]    = [<span class="string">'喜欢的食物'</span>];</div><div class="line"></div><div class="line">$optionalForm                         = [];</div><div class="line">$optionalForm[<span class="string">'common_field_id_list'</span>] = [</div><div class="line">  <span class="string">'USER_FORM_INFO_FLAG_EMAIL'</span>,</div><div class="line">];</div><div class="line">$optionalForm[<span class="string">'custom_field_list'</span>]    = [<span class="string">'喜欢的电影'</span>];</div><div class="line"></div><div class="line">$result = $card-&gt;activateUserForm($cardId, $requiredForm, $optionalForm);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$cardId = <span class="string">'pdkJ9uJYAyfLXsUCwI2LdH2Pn1AU'</span>;</div><div class="line"></div><div class="line">$requiredForm = [</div><div class="line">    <span class="string">'required_form'</span> =&gt; [</div><div class="line">        <span class="string">'common_field_id_list'</span> =&gt; [</div><div class="line">            <span class="string">'USER_FORM_INFO_FLAG_MOBILE'</span>,</div><div class="line">            <span class="string">'USER_FORM_INFO_FLAG_LOCATION'</span>,</div><div class="line">            <span class="string">'USER_FORM_INFO_FLAG_BIRTHDAY'</span>,</div><div class="line">        ],</div><div class="line">        <span class="string">'custom_field_list'</span> =&gt; [</div><div class="line">            <span class="string">'喜欢的食物'</span>,</div><div class="line">        ],</div><div class="line">    ],</div><div class="line">];</div><div class="line"></div><div class="line">$optionalForm = [</div><div class="line">    <span class="string">'optional_form'</span> =&gt; [</div><div class="line">        <span class="string">'common_field_id_list'</span> =&gt; [</div><div class="line">            <span class="string">'USER_FORM_INFO_FLAG_EMAIL'</span>,</div><div class="line">        ],</div><div class="line">        <span class="string">'custom_field_list'</span> =&gt; [</div><div class="line">            <span class="string">'喜欢的食物'</span>,</div><div class="line">        ],</div><div class="line">    ],</div><div class="line">];</div><div class="line"></div><div class="line">$result = $card-&gt;activateUserForm($cardId, $requiredForm, $optionalForm);</div></pre></td></tr></table></figure>
 <h3 id="拉取会员信息接口" class="article-heading"><a href="#拉取会员信息接口" class="headerlink" title="拉取会员信息接口"></a>拉取会员信息接口<a class="article-anchor" href="#拉取会员信息接口" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$card-&gt;getMemberCardUser($cardId, $code);</div></pre></td></tr></table></figure>
 <p>example:</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$cardId = <span class="string">'pbLatjtZ7v1BG_ZnTjbW85GYc_E8'</span>;</div><div class="line">$code    = <span class="string">'916679873278'</span>;</div><div class="line"></div><div class="line">$result = $card-&gt;getMemberCardUser($cardId, $code);</div></pre></td></tr></table></figure>
@@ -393,7 +393,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-08-01T02:16:07.170Z" itemprop="dateModified">上次更新：2016-08-01</time>
+                <time class="article-footer-updated" datetime="2016-08-01T08:22:07.049Z" itemprop="dateModified">上次更新：2016-08-01</time>
                 <a href="lucky-money.html" class="article-footer-prev" title="红包"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="store.html" class="article-footer-next" title="小店"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
