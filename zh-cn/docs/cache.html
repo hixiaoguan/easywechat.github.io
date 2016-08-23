@@ -55,7 +55,7 @@
 你可以参考doctrine/cache官方文档来替换掉应用中默认的缓存配置：
 
 以 redis 为例请先安装 redis 拓展：https://github.com/phpred">
-<meta property="og:updated_time" content="2016-08-23T08:32:50.183Z">
+<meta property="og:updated_time" content="2016-08-23T08:47:16.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="缓存">
 <meta name="twitter:description" content="本项目使用 doctrine/cache 来完成缓存工作，它支持基本目前所有的缓存引擎。
@@ -185,12 +185,20 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>上面提到的 <code>app(&#39;redis&#39;)-&gt;connection($name)</code>, 这里的 <code>$name</code> 是 laravel 项目中配置文件 <code>database.php</code> 中 <code>redis</code> 配置名 <code>default</code>：<a href="https://github.com/laravel/laravel/blob/master/config/database.php#L118" target="_blank" rel="external">https://github.com/laravel/laravel/blob/master/config/database.php#L118</a><br>如果你使用的其它连接，对应传名称就好了。</p>
 </blockquote>
+<h2 id="使用自定义的缓存方式" class="article-heading"><a href="#使用自定义的缓存方式" class="headerlink" title="使用自定义的缓存方式"></a>使用自定义的缓存方式<a class="article-anchor" href="#使用自定义的缓存方式" aria-hidden="true"></a></h2><p>如果你发现 doctrine 提供的几十种缓存方式都满足不了你的需求的话，那么你可以自己建立一个类来完成缓存操作，前提这个类得实现接口：<a href="https://github.com/doctrine/cache/blob/master/lib/Doctrine/Common/Cache/Cache.php" target="_blank" rel="external">Doctrine\Common\Cache\Cache</a></p>
+<p>该接口有以下方法需要实现：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">fetch</span><span class="params">($id)</span></span>;    <span class="comment">// 读取缓存</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">contains</span><span class="params">($id)</span></span>;  <span class="comment">// 检查是否存在缓存</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">save</span><span class="params">($id, $data, $lifeTime = <span class="number">0</span>)</span></span>;   <span class="comment">// 设置缓存</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">delete</span><span class="params">($id)</span></span>;  <span class="comment">// 删除缓存</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getStats</span><span class="params">()</span></span>; <span class="comment">// 获取状态</span></div></pre></td></tr></table></figure>
+<p>下面为一个示例：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Doctrine</span>\<span class="title">Common</span>\<span class="title">Cache</span>\<span class="title">Cache</span> <span class="title">as</span> <span class="title">CacheInterface</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCacheDriver</span> <span class="keyword">implements</span> <span class="title">CacheInterface</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">fetch</span><span class="params">($id)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 你自己从你想实现的存储方式读取并返回</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">contains</span><span class="params">($id)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 同理 返回存在与否 bool 值</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">save</span><span class="params">($id, $data, $lifeTime = <span class="number">0</span>)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 用你的方式存储该缓存内容即可</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">delete</span><span class="params">($id)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 删除并返回 bool 值</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getStats</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 这个你可以不用实现，返回 null 即可</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后实例化你的缓存类并在 EasyWeChat 里使用它：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$myCacheDriver = <span class="keyword">new</span> MyCacheDriver();</div><div class="line"></div><div class="line">$config = [</div><div class="line">    <span class="comment">//...</span></div><div class="line">    <span class="string">'cache'</span>   =&gt; $myCacheDriver,</div><div class="line">];</div><div class="line"></div><div class="line">$wechatApp = <span class="keyword">new</span> Application($options);</div></pre></td></tr></table></figure>
+<p>OK，这样就完成了自定义缓存的操作。</p>
 
 
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-08-23T08:32:50.183Z" itemprop="dateModified">上次更新：2016-08-23</time>
+                <time class="article-footer-updated" datetime="2016-08-23T08:47:16.395Z" itemprop="dateModified">上次更新：2016-08-23</time>
                 <a href="access_token.html" class="article-footer-prev" title="Access Token"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="contributing.html" class="article-footer-next" title="贡献"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -199,7 +207,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Laravel-中使用"><span class="toc-text">Laravel 中使用</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Laravel-中使用"><span class="toc-text">Laravel 中使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用自定义的缓存方式"><span class="toc-text">使用自定义的缓存方式</span></a>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
             <!-- AD -->
