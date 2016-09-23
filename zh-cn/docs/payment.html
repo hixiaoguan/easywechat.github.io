@@ -51,7 +51,7 @@
 <meta property="og:description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 商户平台开发文档。
 配置配置在前面的例子中已经提到过了，支付的相关配置如下：
 &amp;lt;?phpuse EasyWeChat\Foundation\Application;$options = [    // 前面的appid什么的也得保留哦    &apos;app_id&apos; =&amp;gt; &apos;xxxx&apos;,    // ...    // payment">
-<meta property="og:updated_time" content="2016-09-10T02:04:12.484Z">
+<meta property="og:updated_time" content="2016-09-23T06:11:35.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支付">
 <meta name="twitter:description" content="你在阅读本文之前确认你已经仔细阅读了：微信支付 | 商户平台开发文档。
@@ -254,12 +254,12 @@ var _hmt = _hmt || [];
 <li><p>WeixinJSBridge:</p>
  <figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$json = $payment-&gt;configForPayment($prepayId); <span class="comment">// 返回 json 字符串，如果想返回数组，传第二个参数 false</span></div></pre></td></tr></table></figure>
 <p> javascript:</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">...</div><div class="line">WeixinJSBridge.invoke(</div><div class="line">       <span class="string">'getBrandWCPayRequest'</span>, <span class="xml"><span class="php"><span class="meta">&lt;?</span>= $json <span class="meta">?&gt;</span></span>,</span></div><div class="line">       function(res)&#123;</div><div class="line">           if(res.err_msg == "get_brand_wcpay_request：ok" ) &#123;</div><div class="line">                // 使用以上方式判断前端返回,微信团队郑重提示：</div><div class="line">                // res.err_msg将在用户支付成功后返回</div><div class="line">                // ok，但并不保证它绝对可靠。</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   );</div><div class="line">...</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">...</div><div class="line">WeixinJSBridge.invoke(</div><div class="line">       <span class="string">'getBrandWCPayRequest'</span>, &lt;?= $json ?&gt;,</div><div class="line">       <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">           <span class="keyword">if</span>(res.err_msg == <span class="string">"get_brand_wcpay_request：ok"</span> ) &#123;</div><div class="line">                <span class="comment">// 使用以上方式判断前端返回,微信团队郑重提示：</span></div><div class="line">                <span class="comment">// res.err_msg将在用户支付成功后返回</span></div><div class="line">                <span class="comment">// ok，但并不保证它绝对可靠。</span></div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   );</div><div class="line">...</div></pre></td></tr></table></figure>
 </li>
 <li><p>JSSDK:</p>
  <figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$config = $payment-&gt;configForJSSDKPayment($prepayId); <span class="comment">// 返回数组</span></div></pre></td></tr></table></figure>
 <p> javascript:</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">wx.chooseWXPay(&#123;</div><div class="line">    timestamp: <span class="xml"><span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'timestamp'</span>] <span class="meta">?&gt;</span></span>,</span></div><div class="line">    nonceStr: '<span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'nonceStr'</span>] <span class="meta">?&gt;</span></span>',</div><div class="line">    package: '<span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'package'</span>] <span class="meta">?&gt;</span></span>',</div><div class="line">    signType: '<span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'signType'</span>] <span class="meta">?&gt;</span></span>',</div><div class="line">    paySign: '<span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'paySign'</span>] <span class="meta">?&gt;</span></span>', // 支付签名</div><div class="line">    success: function (res) &#123;</div><div class="line">        // 支付成功后的回调函数</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">wx.chooseWXPay(&#123;</div><div class="line">    <span class="attr">timestamp</span>: <span class="xml"><span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'timestamp'</span>] <span class="meta">?&gt;</span></span>,</span></div><div class="line">    nonceStr: '<span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'nonceStr'</span>] <span class="meta">?&gt;</span></span>',</div><div class="line">    package: '<span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'package'</span>] <span class="meta">?&gt;</span></span>',</div><div class="line">    signType: '<span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'signType'</span>] <span class="meta">?&gt;</span></span>',</div><div class="line">    paySign: '<span class="php"><span class="meta">&lt;?</span>= $config[<span class="string">'paySign'</span>] <span class="meta">?&gt;</span></span>', // 支付签名</div><div class="line">    success: function (res) &#123;</div><div class="line">        // 支付成功后的回调函数</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="生成共享收货地址-JS-配置" class="article-heading"><a href="#生成共享收货地址-JS-配置" class="headerlink" title="生成共享收货地址 JS 配置"></a>生成共享收货地址 JS 配置<a class="article-anchor" href="#生成共享收货地址-JS-配置" aria-hidden="true"></a></h2><ol>
@@ -280,7 +280,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-09-10T02:04:12.484Z" itemprop="dateModified">上次更新：2016-09-10</time>
+                <time class="article-footer-updated" datetime="2016-09-23T06:11:35.815Z" itemprop="dateModified">上次更新：2016-09-23</time>
                 <a href="js.html" class="article-footer-prev" title="JSSDK"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="merchant_payment.html" class="article-footer-next" title="企业支付"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               

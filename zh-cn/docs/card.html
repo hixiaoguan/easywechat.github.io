@@ -57,7 +57,7 @@ $result = $card-&amp;gt;getC">
 API列表获取卡券颜色$card-&amp;gt;getColors();
 example:
 $result = $card-&amp;gt;getC">
-<meta property="og:updated_time" content="2016-09-10T02:04:12.484Z">
+<meta property="og:updated_time" content="2016-09-23T06:11:35.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卡券">
 <meta name="twitter:description" content="Version &amp;gt;=3.1.2
@@ -292,9 +292,9 @@ var _hmt = _hmt || [];
 </ul>
 <p>example:</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$code          = <span class="string">'736052543512'</span>;</div><div class="line">$checkConsume = <span class="keyword">true</span>;</div><div class="line">$cardId       = <span class="string">'pdkJ9uDgnm0pKfrTb1yV0dFMO_Gk'</span>;</div><div class="line"></div><div class="line">$result = $card-&gt;getCode($code, $checkConsume, $cardId);</div></pre></td></tr></table></figure>
-<h3 id="核销Code接口" class="article-heading"><a href="#核销Code接口" class="headerlink" title="核销Code接口"></a>核销Code接口<a class="article-anchor" href="#核销Code接口" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$card-&gt;consume($cardId, $code);</div></pre></td></tr></table></figure>
+<h3 id="核销Code接口" class="article-heading"><a href="#核销Code接口" class="headerlink" title="核销Code接口"></a>核销Code接口<a class="article-anchor" href="#核销Code接口" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$card-&gt;consume($code);</div><div class="line"></div><div class="line"><span class="comment">// 或者指定 cardId</span></div><div class="line"></div><div class="line">$card-&gt;consume($code, $cardId);</div></pre></td></tr></table></figure>
 <p>example:</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$cardId = <span class="string">'pdkJ9uDmhkLj6l5bm3cq9iteQBck'</span>;</div><div class="line">$code    = <span class="string">'789248558333'</span>;</div><div class="line"></div><div class="line">$result = $card-&gt;consume($cardId, $code);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$cardId = <span class="string">'pdkJ9uDmhkLj6l5bm3cq9iteQBck'</span>;</div><div class="line">$code    = <span class="string">'789248558333'</span>;</div><div class="line"></div><div class="line">$result = $card-&gt;consume($code);</div><div class="line"></div><div class="line"><span class="comment">//或</span></div><div class="line"></div><div class="line">$result = $card-&gt;consume($code, $cardId);</div></pre></td></tr></table></figure>
 <h3 id="Code解码接口" class="article-heading"><a href="#Code解码接口" class="headerlink" title="Code解码接口"></a>Code解码接口<a class="article-anchor" href="#Code解码接口" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$card-&gt;decryptCode($encryptedCode);</div></pre></td></tr></table></figure>
 <p>example:</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$encryptedCode = <span class="string">'XXIzTtMqCxwOaawoE91+VJdsFmv7b8g0VZIZkqf4GWA60Fzpc8ksZ/5ZZ0DVkXdE'</span>;</div><div class="line"></div><div class="line">$result = $card-&gt;decryptCode($encryptedCode);</div></pre></td></tr></table></figure>
@@ -397,7 +397,7 @@ var _hmt = _hmt || [];
                 <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2016-09-10T02:04:12.484Z" itemprop="dateModified">上次更新：2016-09-10</time>
+                <time class="article-footer-updated" datetime="2016-09-23T06:11:35.811Z" itemprop="dateModified">上次更新：2016-09-23</time>
                 <a href="lucky-money.html" class="article-footer-prev" title="红包"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="store.html" class="article-footer-next" title="小店"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
