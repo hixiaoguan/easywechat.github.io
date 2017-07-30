@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>网页授权 | Easy We Chat</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://easywechat.org//en/docs/oauth-793ad794c4.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://easywechat.org/docs/oauth.html">
+    
+      <link rel="alternative" hreflang="en" href="http://easywechat.org//en/docs/oauth-793ad794c4.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/build/css/easywechat-d11105bc33.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Easy We Chat">
+  <!-- Open Graph -->
+  <meta name="description" content="注意：Auth 服务不缓存 access_token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求 $auth-&amp;gt;authorize();通常的逻辑应该是：  检查你自己的 Session 中是否有登录信息，如果有则不跳授权页面 如果 Session 中没有登录信息，则跳转到授权页并获取用户信息（$auth-&amp;gt;authorize() 一个方法全搞定） 把拿到的用户信息存">
+<meta property="og:type" content="website">
+<meta property="og:title" content="网页授权">
+<meta property="og:url" content="http://easywechat.org//en/docs/oauth-793ad794c4.html">
+<meta property="og:site_name" content="Easy We Chat">
+<meta property="og:description" content="注意：Auth 服务不缓存 access_token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求 $auth-&amp;gt;authorize();通常的逻辑应该是：  检查你自己的 Session 中是否有登录信息，如果有则不跳授权页面 如果 Session 中没有登录信息，则跳转到授权页并获取用户信息（$auth-&amp;gt;authorize() 一个方法全搞定） 把拿到的用户信息存">
+<meta property="og:updated_time" content="2017-07-30T03:23:32.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网页授权">
+<meta name="twitter:description" content="注意：Auth 服务不缓存 access_token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求 $auth-&amp;gt;authorize();通常的逻辑应该是：  检查你自己的 Session 中是否有登录信息，如果有则不跳授权页面 如果 Session 中没有登录信息，则跳转到授权页并获取用户信息（$auth-&amp;gt;authorize() 一个方法全搞定） 把拿到的用户信息存">
+<meta name="twitter:site" content="anzhengchao">
+  <!-- Swiftype -->
+  <meta class="swiftype" name="title" data-type="string" content="网页授权">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64156348-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2ef84bd0d61ef3fd6f5626bbffe75209";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="baidu-site-verification" content="tBkeSW2PJg" />
+  <meta name="baidu-site-verification" content="AADzpZ5myL" />
+  <meta name="google-site-verification" content="Q3yeKP4X_byNBAGuf8PhwO7vNYUgo2AnJUY9uwWn8tk" />
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2163469583563094",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+<body class="">
+  <div id="container">
+    
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/en/" id="logo">EasyWeChat</a>
+    </h1>
+    <nav id="main-nav">
+      <ul>
+        <li class="main-nav-item"><a href="/en" class="main-nav-link">Home</a></li><li class="main-nav-item"><a href="/en/docs/" class="main-nav-link">Docs</a></li><li class="main-nav-item"><a href="https://forum.easywechat.org" class="main-nav-link">Froum</a></li><li class="main-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="main-nav-link">Video Tutorial</a></li><li class="main-nav-item"><a href="/news/" class="main-nav-link">News</a></li><li class="main-nav-item"><a href="//donate-b3df589901.html" class="main-nav-link">Donate</a></li>
+        <li class="main-nav-item">
+          <a href="https://github.com/overtrue/wechat" class="main-nav-link">GitHub</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select">
+        
+          <option data-page-lang="en" value="zh-cn">简体中文</option>
+        
+          <option data-page-lang="en" value="en" selected>English</option>
+        
+      </select>
+    </div>
+    
+    <div id="search-btn-wrap" class="main-nav-item">
+      <input type="text" class="st-default-search-input">
+    </div>
+    
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">网页授权</h1>
+                <a href="https://github.com/EasyWeChat/docs/edit/en/oauth.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i> Improve this doc</a>
+              </header>
+              <!-- AD -->
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- easywechat-top -->
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-2163469583563094"
+                   data-ad-slot="3400967944"
+                   data-ad-format="auto"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+              <!-- /AD -->
+              <div>
+                <strong class="sidebar-title">Contents</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注意：Auth-服务不缓存-access-token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求-auth-gt-authorize"><span class="toc-text">注意：Auth 服务不缓存 access_token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求 $auth->authorize();</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#友情提示"><span class="toc-text">友情提示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#授权并返回用户"><span class="toc-text">授权并返回用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它单独使用的方法"><span class="toc-text">其它单独使用的方法</span></a></li></ol></li></ol>
+              </div>
+              <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
+                <h2 id="注意：Auth-服务不缓存-access-token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求-auth-gt-authorize" class="article-heading"><a href="#注意：Auth-服务不缓存-access-token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求-auth-gt-authorize" class="headerlink" title="注意：Auth 服务不缓存 access_token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求 $auth-&gt;authorize();"></a>注意：<code>Auth</code> 服务不缓存 <code>access_token</code>，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求 <code>$auth-&gt;authorize()</code>;<a class="article-anchor" href="#注意：Auth-服务不缓存-access-token，在获取到用户信息后请自己缓存当前用户信息，不要每次都直接请求-auth-gt-authorize" aria-hidden="true"></a></h2><p>通常的逻辑应该是：</p>
+<ol>
+<li>检查你自己的 Session 中是否有登录信息，如果有则不跳授权页面</li>
+<li>如果 Session 中没有登录信息，则跳转到授权页并获取用户信息（<code>$auth-&gt;authorize()</code> 一个方法全搞定）</li>
+<li><p>把拿到的用户信息存到 Session 中</p>
+<ul>
+<li>有 SESSION -&gt; <strong>最终业务界面</strong></li>
+<li>没有 SESSION -&gt; 用户<strong>最终业务界面</strong> -&gt; <strong>授权页</strong> 完成授权存 SESSION -&gt; 跳转到你的<strong>最终业务界面</strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="友情提示" class="article-heading"><a href="#友情提示" class="headerlink" title="友情提示"></a>友情提示<a class="article-anchor" href="#友情提示" aria-hidden="true"></a></h2><p>授权逻辑不要写在业务页！！！ 不然你分享出去的链接会带你自己的 <code>code</code> 出去，这样就会判断不了是否已经授权。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Overtrue</span>\<span class="title">Wechat</span>\<span class="title">Auth</span>;</div><div class="line"></div><div class="line">$appId  = <span class="string">'wx3cf0f39249eb0e60'</span>;</div><div class="line">$secret = <span class="string">'f1c242f4f28f735d4687abb469072a29'</span>;</div><div class="line"></div><div class="line">$auth = <span class="keyword">new</span> Auth($appId, $secret);</div></pre></td></tr></table></figure>
+<h3 id="授权并返回用户" class="article-heading"><a href="#授权并返回用户" class="headerlink" title="授权并返回用户"></a>授权并返回用户<a class="article-anchor" href="#授权并返回用户" aria-hidden="true"></a></h3><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$auth-&gt;authorize($to = <span class="keyword">null</span>, $scope = <span class="string">'snsapi_userinfo'</span>, $state = <span class="string">'STATE'</span>)</div></pre></td></tr></table></figure>
+<p>内部逻辑：</p>
+<pre><code>1. 非微信回调，会自动跳转到微信授权页，并且以当前页（`$to` 为 `null` 时取当前页）作为回调页
+2. 如果已经授权返回用户对象，`$scope` 为 `snsapi_base` 时用户对象只有 `openid` 一个属性
+</code></pre><figure class="highlight php"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 请一定要自己存储用户的登录信息，不要每次都授权</span></div><div class="line"><span class="keyword">if</span> (<span class="keyword">empty</span>($_SESSION[<span class="string">'logged_user'</span>])) &#123;</div><div class="line">    $user = $auth-&gt;authorize(); <span class="comment">// 返回用户 Bag</span></div><div class="line">    $_SESSION[<span class="string">'logged_user'</span>] = $user;</div><div class="line">    <span class="comment">// 跳转到其它授权才能访问的页面</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">var_dump($_SESSION[<span class="string">'logged_user'</span>]);</div></pre></td></tr></table></figure>
+<p>如果你不想用默认的逻辑，你也可以自己使用下面单独的方法来完成授权的操作：</p>
+<h3 id="其它单独使用的方法" class="article-heading"><a href="#其它单独使用的方法" class="headerlink" title="其它单独使用的方法"></a>其它单独使用的方法<a class="article-anchor" href="#其它单独使用的方法" aria-hidden="true"></a></h3><ul>
+<li><p>生成授权链接</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 生成并返回</span></div><div class="line">$auth-&gt;url($to, $scope, $state = <span class="string">'STATE'</span>);</div><div class="line"><span class="comment">// 直接跳转</span></div><div class="line">$auth-&gt;redirect($to, $scope, $state = <span class="string">'STATE'</span>);   <span class="comment">// 直接跳转</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li>上面的 $scope 与 $state 通常都不用传</li>
+<li><code>url</code> 与 <code>redirect</code> 参数一致</li>
+<li>$scope 可选为：<ul>
+<li>snsapi_base 只获取用户 <code>openid</code></li>
+<li>snsapi_userinfo 获取用户账号信息</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>example:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 只取 `openid`</span></div><div class="line">$url = $auth-&gt;url(<span class="string">'http://overtrue.me'</span>, <span class="string">'snsapi_base'</span>);</div><div class="line"><span class="comment">// 需要拉取用户信息</span></div><div class="line">$url = $auth-&gt;url(<span class="string">'http://overtrue.me'</span>, <span class="string">'snsapi_userinfo'</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>获取已授权用户</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$auth-&gt;user();</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取授权许可信息</p>
+<p>在每一次使用 code 得到 access_token 后，以下信息会存储：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="attr">"access_token"</span>:<span class="string">"ACCESS_TOKEN"</span>,</div><div class="line">   <span class="attr">"expires_in"</span>:<span class="number">7200</span>,</div><div class="line">   <span class="attr">"refresh_token"</span>:<span class="string">"REFRESH_TOKEN"</span>,</div><div class="line">   <span class="attr">"openid"</span>:<span class="string">"OPENID"</span>,</div><div class="line">   <span class="attr">"scope"</span>:<span class="string">"SCOPE"</span>,</div><div class="line">   <span class="attr">"unionid"</span>: <span class="string">"o6_bmasdasdsad6_2sgVt7hMZOPfL"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>你可以用以下方式获取，用来存储到你的数据库个人信息中</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$auth-&gt;access_token;<span class="comment">// 获取本次授权后的 access_token</span></div><div class="line">$auth-&gt;refresh_token;<span class="comment">// 获取本次授权后的 refresh_token</span></div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>检查 access_token 是否有效</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$auth-&gt;accessTokenIsValid($accessToken, $openid); <span class="comment">// 返回 boolean</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 refresh_token 刷新 access_token</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$auth-&gt;refresh($refreshToken); <span class="comment">// 注意这里不是access_token</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 access_token 获取用户信息</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><div class="line">$auth-&gt;getUser($openId, $accessToken);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>更多关于微信网页授权 API 请参考： <a href="http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html" target="_blank" rel="external">http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html</a></p>
+
+
+                <div class="donate-btn text-center"><a href="//donate-b3df589901.html" target="_blank">Donate</a></div>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-07-30T03:23:32.170Z" itemprop="dateModified">Last updated: 2017-07-30</time>
+                <a href="user-group.html" class="article-footer-prev" title="User Group"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="mini_program.html" class="article-footer-next" title="Mini Program"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <!-- AD -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- easywechat-sidebar -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2163469583563094"
+                 data-ad-slot="6354434345"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- /AD -->
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">Getting Started</strong><a href="/index-0294d6edb6.html" class="sidebar-link">Overview</a><a href="installation.html" class="sidebar-link">Installation</a><a href="tutorial.html" class="sidebar-link">Tutorial</a><a href="configuration.html" class="sidebar-link">Configuration</a><a href="integration.html" class="sidebar-link">Integration</a><a href="troubleshooting.html" class="sidebar-link">FAQ</a><strong class="sidebar-title">Basic Usage</strong><a href="server.html" class="sidebar-link">Server</a><a href="messages.html" class="sidebar-link">Messages</a><a href="message-transfer.html" class="sidebar-link">Message Transfer</a><a href="events.html" class="sidebar-link">Events</a><a href="broadcast.html" class="sidebar-link">Broadcast</a><a href="notice.html" class="sidebar-link">Notice</a><a href="user.html" class="sidebar-link">User</a><a href="user-tag.html" class="sidebar-link">User Tag</a><a href="user-group.html" class="sidebar-link">User Group</a><a href="oauth.html" class="sidebar-link current">Oauth</a><a href="mini_program.html" class="sidebar-link">Mini Program</a><a href="material.html" class="sidebar-link">Materials</a><a href="menu.html" class="sidebar-link">Menu</a><a href="js.html" class="sidebar-link">Javascript</a><a href="payment.html" class="sidebar-link">Payment</a><a href="merchant_payment.html" class="sidebar-link">Merchant Payment</a><a href="lucky-money.html" class="sidebar-link">Lucky Money</a><a href="card.html" class="sidebar-link">Card</a><a href="store.html" class="sidebar-link">Store</a><a href="poi.html" class="sidebar-link">POI</a><a href="staff.html" class="sidebar-link">Staff</a><a href="anaylsis.html" class="sidebar-link">Anaylsis</a><a href="qrcode.html" class="sidebar-link">Qrcode</a><a href="short-url.html" class="sidebar-link">Short Url</a><a href="semantic.html" class="sidebar-link">Semantic</a><a href="reply.html" class="sidebar-link">Auto Reply</a><a href="open_platform.html" class="sidebar-link">Open Platform</a><strong class="sidebar-title">Customization</strong><a href="access_token.html" class="sidebar-link">Access Token</a><a href="cache.html" class="sidebar-link">Cache</a><strong class="sidebar-title">Miscellaneous</strong><a href="troubleshooting.html" class="sidebar-link">Troubleshooting</a><a href="contributing.html" class="sidebar-link">Contributing</a><a href="releases.html" class="sidebar-link">Releases Notes</a><a href="roadmap.html" class="sidebar-link">Roadmap</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="wrapper">
+    <div class="inner">
+      <div class="friend-links">
+        
+        <a href="http://overtrue.me" target="_blank">overtrue.me</a>
+        
+        <a href="https://laravel-china.org" target="_blank">Laravel China</a>
+        
+        <a href="https://laravist.com" target="_blank">Laravist 视频教程</a>
+        
+        <a href="http://laravelacademy.org" target="_blank">Laravel 学院</a>
+        
+      </div>
+      <div id="footer-copyright">
+        &copy; 2017 <a href="http://overtrue.me/" target="_blank">overtrue</a><br>
+        Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+      </div>
+      <div id="footer-links">
+        <a href="http://weibo.com/44294631" class="footer-link" target="_blank"><i class="fa fa-weibo"></i></a>
+        <a href="https://github.com/overtrue/wechat" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+        <a href="https://twitter.com/anzhengchao" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="/en" class="mobile-nav-link">Home</a></li><li class="mobile-nav-item"><a href="/en/docs/" class="mobile-nav-link">Docs</a></li><li class="mobile-nav-item"><a href="https://forum.easywechat.org" class="mobile-nav-link">Froum</a></li><li class="mobile-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="mobile-nav-link">Video Tutorial</a></li><li class="mobile-nav-item"><a href="/news/" class="mobile-nav-link">News</a></li><li class="mobile-nav-item"><a href="//donate-b3df589901.html" class="mobile-nav-link">Donate</a></li>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/overtrue/wechat" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="/index-0294d6edb6.html" class="mobile-nav-link">Overview</a><a href="installation.html" class="mobile-nav-link">Installation</a><a href="tutorial.html" class="mobile-nav-link">Tutorial</a><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="integration.html" class="mobile-nav-link">Integration</a><a href="troubleshooting.html" class="mobile-nav-link">FAQ</a><strong class="mobile-nav-title">Basic Usage</strong><a href="server.html" class="mobile-nav-link">Server</a><a href="messages.html" class="mobile-nav-link">Messages</a><a href="message-transfer.html" class="mobile-nav-link">Message Transfer</a><a href="events.html" class="mobile-nav-link">Events</a><a href="broadcast.html" class="mobile-nav-link">Broadcast</a><a href="notice.html" class="mobile-nav-link">Notice</a><a href="user.html" class="mobile-nav-link">User</a><a href="user-tag.html" class="mobile-nav-link">User Tag</a><a href="user-group.html" class="mobile-nav-link">User Group</a><a href="oauth.html" class="mobile-nav-link current">Oauth</a><a href="mini_program.html" class="mobile-nav-link">Mini Program</a><a href="material.html" class="mobile-nav-link">Materials</a><a href="menu.html" class="mobile-nav-link">Menu</a><a href="js.html" class="mobile-nav-link">Javascript</a><a href="payment.html" class="mobile-nav-link">Payment</a><a href="merchant_payment.html" class="mobile-nav-link">Merchant Payment</a><a href="lucky-money.html" class="mobile-nav-link">Lucky Money</a><a href="card.html" class="mobile-nav-link">Card</a><a href="store.html" class="mobile-nav-link">Store</a><a href="poi.html" class="mobile-nav-link">POI</a><a href="staff.html" class="mobile-nav-link">Staff</a><a href="anaylsis.html" class="mobile-nav-link">Anaylsis</a><a href="qrcode.html" class="mobile-nav-link">Qrcode</a><a href="short-url.html" class="mobile-nav-link">Short Url</a><a href="semantic.html" class="mobile-nav-link">Semantic</a><a href="reply.html" class="mobile-nav-link">Auto Reply</a><a href="open_platform.html" class="mobile-nav-link">Open Platform</a><strong class="mobile-nav-title">Customization</strong><a href="access_token.html" class="mobile-nav-link">Access Token</a><a href="cache.html" class="mobile-nav-link">Cache</a><strong class="mobile-nav-title">Miscellaneous</strong><a href="troubleshooting.html" class="mobile-nav-link">Troubleshooting</a><a href="contributing.html" class="mobile-nav-link">Contributing</a><a href="releases.html" class="mobile-nav-link">Releases Notes</a><a href="roadmap.html" class="mobile-nav-link">Roadmap</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select">
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="/build/js/main-f3ea4c4cec.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
+
+<script src="/js/tab.js"></script>
+<!-- Swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','URYXMYgtQuEhNHNY8d-F','2.0.0');
+</script>
+</body>
+</html>
